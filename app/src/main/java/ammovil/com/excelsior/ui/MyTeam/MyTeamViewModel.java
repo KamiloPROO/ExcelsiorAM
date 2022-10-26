@@ -10,7 +10,7 @@ public class MyTeamViewModel extends ViewModel {
 
     public MyTeamViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is my team fragment");
+        mText.setValue("M Y  T E A M");
     }
 
     public LiveData<String> getText() {
