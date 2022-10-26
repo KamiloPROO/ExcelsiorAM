@@ -4,21 +4,687 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/whitebackground"
     tools:context=".ui.Finances.FinancesFragment">
 
-    <TextView
-        android:id="@+id/text_finances"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:text="Finances"
-        android:textColor="@color/typography"
+
+
+    <ImageView
+        android:id="@+id/logoExs"
+        android:layout_width="127dp"
+        android:layout_height="118dp"
+        android:background="@drawable/log"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.105"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textFinances"
+        android:layout_width="227dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="F I N A N C E S"
+        android:textAlignment="center"
+        android:textColor="@color/typography"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/logoExs"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.011" />
+
+
+    <TextView
+        android:id="@+id/textFinances2"
+        android:layout_width="195dp"
+        android:layout_height="44dp"
+        android:text="@string/incomes_spences"
+        android:textAlignment="center"
+        android:textColor="@color/typography"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.22"
+        app:layout_constraintStart_toEndOf="@+id/logoExs"
+        app:layout_constraintTop_toBottomOf="@+id/textFinances"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewFinances"
+        android:layout_width="370dp"
+        android:layout_height="161dp"
+        app:cardBackgroundColor="@color/cards"
+        app:cardCornerRadius="15sp"
+        app:cardElevation="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.241">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="365dp"
+            android:layout_height="159dp">
+
+            <TextView
+                android:id="@+id/txtcardFinances"
+                android:layout_width="227dp"
+                android:layout_height="70dp"
+                android:text="PROGRESS OF MY PLAN"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.105"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.145" />
+
+            <TextView
+                android:id="@+id/txtcardFinances2"
+                android:layout_width="114dp"
+                android:layout_height="22dp"
+                android:text="6% mensual"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.059"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtcardFinances"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/txtcardFinances5"
+                android:layout_width="114dp"
+                android:layout_height="13dp"
+                android:text="Master Investor"
+                android:textColor="@color/typography"
+                android:textSize="11sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.06"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtcardFinances"
+                app:layout_constraintVertical_bias="0.469" />
+
+            <TextView
+                android:id="@+id/txtcardFinances6"
+                android:layout_width="114dp"
+                android:layout_height="13dp"
+                android:text="Current Performance"
+                android:textColor="@color/verdegod"
+                android:textSize="11sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/txtcardFinances5"
+                app:layout_constraintTop_toBottomOf="@+id/txtcardFinances"
+                app:layout_constraintVertical_bias="0.469" />
+
+            <TextView
+                android:id="@+id/txtcardFinances3"
+                android:layout_width="114dp"
+                android:layout_height="27dp"
+                android:text="U$45000.00"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.059"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtcardFinances"
+                app:layout_constraintVertical_bias="0.888" />
+
+            <TextView
+                android:id="@+id/txtcardFinances4"
+                android:layout_width="114dp"
+                android:layout_height="27dp"
+                android:text="U$65000.87"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/txtcardFinances3"
+                app:layout_constraintTop_toBottomOf="@+id/txtcardFinances"
+                app:layout_constraintVertical_bias="0.888" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardFinances2"
+        android:layout_width="165dp"
+        android:layout_height="102dp"
+        app:cardBackgroundColor="@color/cards"
+        app:cardCornerRadius="8sp"
+        app:cardElevation="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewFinances"
+        app:layout_constraintVertical_bias="0.069">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/txtTotal"
+                android:layout_width="77sp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="TOTAL INCOME"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.242" />
+
+
+            <ImageView
+                android:id="@+id/imgTotal"
+                android:layout_width="46dp"
+                android:layout_height="42dp"
+                android:background="@drawable/total"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.769"
+                app:layout_constraintStart_toEndOf="@+id/txtTotal"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.266" />
+
+            <TextView
+                android:id="@+id/txtTotalSaldo"
+                android:layout_width="143dp"
+                android:layout_height="28dp"
+                android:layout_marginStart="16dp"
+                android:text="U$20500.00"
+                android:textColor="@color/verdegod"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.818" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardFinances3"
+        android:layout_width="165dp"
+        android:layout_height="102dp"
+        app:cardBackgroundColor="@color/cards"
+        app:cardCornerRadius="8sp"
+        app:cardElevation="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.159"
+        app:layout_constraintStart_toEndOf="@+id/cardFinances2"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewFinances"
+        app:layout_constraintVertical_bias="0.069">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:id="@+id/txtAvailable"
+                android:layout_width="100sp"
+                android:layout_height="20sp"
+                android:text="AVAILABLE"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.461" />
+
+            <ImageView
+                android:id="@+id/imgAvailable"
+                android:layout_width="46dp"
+                android:layout_height="35dp"
+                android:background="@drawable/avalible"
+                app:layout_constraintBottom_toTopOf="@+id/txtAvailable"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.495"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.014" />
+
+            <TextView
+                android:id="@+id/txtSaldoAvailable"
+                android:layout_width="143dp"
+                android:layout_height="28dp"
+                android:layout_marginStart="16dp"
+                android:text="U$20500.00"
+                android:textColor="@color/verdegod"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.818" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardFinances4"
+        android:layout_width="120dp"
+        android:layout_height="110dp"
+        app:cardBackgroundColor="@color/cards"
+        app:cardCornerRadius="8sp"
+        app:cardElevation="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/cardFinances6"
+        app:layout_constraintHorizontal_bias="0.955"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardFinances3"
+        app:layout_constraintVertical_bias="0.094">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:id="@+id/txtBondInd"
+                android:layout_width="45sp"
+                android:layout_height="17sp"
+                android:text="BOND"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/txtBondInd2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.133"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/txtBondInd2"
+                android:layout_width="100sp"
+                android:layout_height="17sp"
+                android:text="QUICK START"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.365" />
+
+            <TextView
+                android:id="@+id/txtBondInd3"
+                android:layout_width="100sp"
+                android:layout_height="17sp"
+                android:text="INDIRECT"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.548" />
+
+            <ImageView
+                android:id="@+id/imgBondInd"
+                android:layout_width="35dp"
+                android:layout_height="30dp"
+                android:background="@drawable/quiskstar"
+                app:layout_constraintBottom_toTopOf="@+id/txtSaldoBondInd"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.882"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.088" />
+
+            <TextView
+                android:id="@+id/txtSaldoBondInd"
+                android:layout_width="100dp"
+                android:layout_height="28dp"
+                android:layout_marginStart="8dp"
+                android:text="U$10500.00"
+                android:textColor="@color/typography"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.914" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardFinances5"
+        android:layout_width="120dp"
+        android:layout_height="76dp"
+        app:cardBackgroundColor="@color/cards"
+        app:cardCornerRadius="8sp"
+        app:cardElevation="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardFinances4"
+        app:layout_constraintVertical_bias="0.116">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:id="@+id/txtBondPort"
+                android:layout_width="45sp"
+                android:layout_height="17sp"
+                android:text="BOND"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/txtBondPort2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.106"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/txtBondPort2"
+                android:layout_width="110sp"
+                android:layout_height="17sp"
+                android:text="PORTFOLIO  1%"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.8"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.457" />
+
+            <ImageView
+                android:id="@+id/imgBondPort"
+                android:layout_width="25dp"
+                android:layout_height="22dp"
+                android:background="@drawable/portafolio"
+                app:layout_constraintBottom_toTopOf="@+id/txtSaldoBondPort"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.831"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.227" />
+
+            <TextView
+                android:id="@+id/txtSaldoBondPort"
+                android:layout_width="100dp"
+                android:layout_height="28dp"
+                android:layout_marginStart="8dp"
+                android:text="U$3050.00"
+                android:textColor="@color/mozport"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.914" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardFinances6"
+        android:layout_width="120dp"
+        android:layout_height="110dp"
+        app:cardBackgroundColor="@color/cards"
+        app:cardCornerRadius="8sp"
+        app:cardElevation="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.962"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardFinances3"
+        app:layout_constraintVertical_bias="0.094">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:id="@+id/txtBondAct"
+                android:layout_width="45sp"
+                android:layout_height="17sp"
+                android:text="BOND"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/txtBondAct2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.133"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/txtBondAct2"
+                android:layout_width="100sp"
+                android:layout_height="17sp"
+                android:text="ACTIVATION"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.365" />
+
+            <TextView
+                android:id="@+id/txtBondAct3"
+                android:layout_width="100sp"
+                android:layout_height="17sp"
+                android:text="MESUAL"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.548" />
+
+            <ImageView
+                android:id="@+id/imgBondAct"
+                android:layout_width="35dp"
+                android:layout_height="30dp"
+                android:background="@drawable/mensualacti"
+                app:layout_constraintBottom_toTopOf="@+id/txtSaldoBondAct"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.882"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.088" />
+
+            <TextView
+                android:id="@+id/txtSaldoBondAct"
+                android:layout_width="100dp"
+                android:layout_height="28dp"
+                android:layout_marginStart="8dp"
+                android:text="U$1500.00"
+                android:textColor="@color/verdegod"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.914" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardFinances7"
+        android:layout_width="120dp"
+        android:layout_height="110dp"
+        app:cardBackgroundColor="@color/cards"
+        app:cardCornerRadius="8sp"
+        app:cardElevation="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/cardFinances4"
+        app:layout_constraintHorizontal_bias="0.64"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardFinances3"
+        app:layout_constraintVertical_bias="0.094">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:id="@+id/txtBond"
+                android:layout_width="45sp"
+                android:layout_height="17sp"
+                android:text="BOND"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/txtBond2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.133"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/txtBond2"
+                android:layout_width="100sp"
+                android:layout_height="17sp"
+                android:text="QUICK START"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.365" />
+
+            <TextView
+                android:id="@+id/txtBond3"
+                android:layout_width="100sp"
+                android:layout_height="17sp"
+                android:text="DIRECT"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.548" />
+
+            <ImageView
+                android:id="@+id/imgBond"
+                android:layout_width="35dp"
+                android:layout_height="30dp"
+                android:background="@drawable/quisk"
+                app:layout_constraintBottom_toTopOf="@+id/txtSaldoBond"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.882"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.088" />
+
+            <TextView
+                android:id="@+id/txtSaldoBond"
+                android:layout_width="100dp"
+                android:layout_height="28dp"
+                android:layout_marginStart="8dp"
+                android:text="U$20500.00"
+                android:textColor="@color/verdegod"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.914" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardFinancesFooter"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        app:cardBackgroundColor="@color/cards"
+        app:cardCornerRadius="0sp"
+        app:cardElevation="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.532"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardFinances5"
+        app:layout_constraintVertical_bias="1.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:id="@+id/link"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_txt"
+                android:text="@string/link"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toTopOf="@+id/btnFinancesCopy"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.494"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <Button
+                android:id="@+id/btnFinancesCopy"
+                android:layout_width="75sp"
+                android:layout_height="35sp"
+                android:text="copy"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
