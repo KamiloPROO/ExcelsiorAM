@@ -4,21 +4,108 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/whitebackground"
     tools:context=".ui.MyTeam.MyTeamFragment">
 
-    <TextView
-        android:id="@+id/text_Myteam"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:textColor="@color/typography"
-        android:text="My Team"
+    <ImageView
+        android:id="@+id/logoExs"
+        android:layout_width="127dp"
+        android:layout_height="118dp"
+        android:background="@drawable/log"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.105"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textFinances"
+        android:layout_width="227dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="M Y  T E A M"
+        android:textAlignment="center"
+        android:textColor="@color/typography"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/logoExs"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.011" />
+
+
+    <TextView
+        android:id="@+id/textFinances2"
+        android:layout_width="195dp"
+        android:layout_height="44dp"
+        android:text="@string/tituTeam"
+        android:textAlignment="center"
+        android:textColor="@color/typography"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.22"
+        app:layout_constraintStart_toEndOf="@+id/logoExs"
+        app:layout_constraintTop_toBottomOf="@+id/textFinances"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewFinances"
+        android:layout_width="180dp"
+        android:layout_height="91dp"
+        app:cardBackgroundColor="@color/cards"
+        app:cardCornerRadius="15sp"
+        app:cardElevation="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.079"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.252">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="365dp"
+            android:layout_height="159dp">
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewTeam2"
+        android:layout_width="180dp"
+        android:layout_height="91dp"
+        app:cardBackgroundColor="@color/cards"
+        app:cardCornerRadius="15sp"
+        app:cardElevation="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.081"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewTeam"
+        android:layout_width="180dp"
+        android:layout_height="91dp"
+        app:cardBackgroundColor="@color/cards"
+        app:cardCornerRadius="15sp"
+        app:cardElevation="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.932"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+    </androidx.cardview.widget.CardView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
