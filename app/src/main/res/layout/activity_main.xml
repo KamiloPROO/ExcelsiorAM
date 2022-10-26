@@ -53,7 +53,7 @@
     <EditText
         android:id="@+id/edUser"
         android:layout_width="300sp"
-        android:layout_height="50sp"
+        android:layout_height="40sp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:hint="@string/user"
@@ -66,7 +66,7 @@
         app:layout_constraintHorizontal_bias="0.414"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.421" />
+        app:layout_constraintVertical_bias="0.415" />
 
     <TextView
         android:id="@+id/nomPasw"
@@ -86,7 +86,7 @@
     <EditText
         android:id="@+id/edPasw"
         android:layout_width="300sp"
-        android:layout_height="50sp"
+        android:layout_height="40sp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:hint="@string/password"
@@ -99,19 +99,19 @@
         app:layout_constraintHorizontal_bias="0.414"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.574" />
+        app:layout_constraintVertical_bias="0.565" />
 
     <ImageView
         android:id="@+id/logoRC"
-        android:layout_width="37dp"
-        android:layout_height="35dp"
+        android:layout_width="50dp"
+        android:layout_height="45dp"
         android:background="@drawable/iconoforgotpass"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.459"
+        app:layout_constraintHorizontal_bias="0.434"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.654" />
+        app:layout_constraintVertical_bias="0.626" />
 
     <TextView
         android:id="@+id/txtRC"
@@ -125,7 +125,7 @@
         app:layout_constraintHorizontal_bias="0.763"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.651" />
+        app:layout_constraintVertical_bias="0.621" />
 
     <Button
         android:id="@+id/btnLogin"
