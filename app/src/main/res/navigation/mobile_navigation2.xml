@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation2"
+    app:startDestination="@+id/nav_dashboard">
+
+    <fragment
+        android:id="@+id/nav_dashboard"
+        android:name="ammovil.com.excelsior.ui.Finances.FinancesFragment"
+        android:label="dashboard"
+        tools:layout="@layout/fragment_finances" />
+
+    <fragment
+        android:id="@+id/nav_finances"
+        android:name="ammovil.com.excelsior.ui.Dashboard.DashboarFragment"
+        android:label="finances"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/nav_team"
+        android:name="ammovil.com.excelsior.ui.MyTeam.MyTeamFragment"
+        android:label="team"
+        tools:layout="@layout/fragment_myteam" />
+
+    <fragment
+        android:id="@+id/nav_wallet"
+        android:name="ammovil.com.excelsior.ui.Wallet.WalletFragment"
+        android:label="wallet"
+        tools:layout="@layout/fragment_wallet" />
+
+    <fragment
+        android:id="@+id/nav_investor"
+        android:name="ammovil.com.excelsior.ui.Investor.InvestorFragment"
+        android:label="investor"
+        tools:layout="@layout/fragment_investor" />
+
+    <fragment
+        android:id="@+id/nav_education"
+        android:name="ammovil.com.excelsior.ui.Education.EducationFragment"
+        android:label="education"
+        tools:layout="@layout/fragment_education" />
+
+    <fragment
+        android:id="@+id/nav_resources"
+        android:name="ammovil.com.excelsior.ui.Resources.ResourcesFragment"
+        android:label="resources"
+        tools:layout="@layout/fragment_resources" />
+
+    <fragment
+        android:id="@+id/nav_support"
+        android:name="ammovil.com.excelsior.ui.Support.SupportFragment"
+        android:label="support"
+        tools:layout="@layout/fragment_support" />
+</navigation>

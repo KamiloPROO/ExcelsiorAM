@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">excelsior</string>
+    <string name="user">Please enter your username</string>
+    <string name="password">Please enter your password</string>
+    <string name="btnLogin">Login</string>
+    <string name="txtSC">Don´t have an account yet?</string>
+    <string name="newpass">Please enter your new password</string>
+    <string name="conpass">Please confirm your new password</string>
+
+    <string name="smsRC">*after submiting your password you will have to Log in again.</string>
+    <string name="recovery">*We will send you an e-mail with a verification code you will have to submit to procced your password recovery.</string>
+    <string name="txtnoti">We have sent you an email to user@gmail.com with instructions to change your password *if you can\'t find it, check your Spam inbox.</string>
+    <string name="title_activity_main_menu">Main_menu</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+
+
+    <string name="txtrenew5">Si no has creado una cuenta, no se requiere ninguna otra acciòn.</string>
+    <string name="txtrenew3">Escribenos a soporte@excelsiortrader.com</string>
+    <string name="txtrenew2">Si no solicitaste el cambio de contraseña,ignora este correo. Tu contraseña continuara siendo la misma</string>
+    <string name="txtrenew">No hay problema,crea tu nueva contraseña y continua disfrutando de nuestro servicio</string>
+    <string name="txtrenew4">Ingresa al siguiente link para vereficar su correo electronico.</string>
+</resources>

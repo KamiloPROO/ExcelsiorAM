@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/nav_header_height"
+    android:background="@color/cards"
+    android:gravity="bottom"
+    android:orientation="horizontal"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="100sp"
+        android:layout_marginStart="10sp"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/nav_header_desc"
+        app:srcCompat="@drawable/log" />
+
+    <TextView
+        android:layout_width="170sp"
+        android:layout_height="40sp"
+        android:layout_marginStart="0sp"
+        android:layout_marginTop="70sp"
+        android:textColor="@color/typography"
+        android:textSize="28sp"
+        android:textAlignment="center"
+        android:text="EXCELSIOR"
+         />
+
+
+</LinearLayout>
