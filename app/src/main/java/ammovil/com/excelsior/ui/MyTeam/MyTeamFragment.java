@@ -24,7 +24,7 @@ public class MyTeamFragment extends Fragment {
         binding = FragmentMyteamBinding .inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textMyteam;
+        final TextView textView = binding.textMyTeam;
         slideshowViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
