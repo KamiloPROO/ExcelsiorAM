@@ -155,6 +155,47 @@
                 app:layout_constraintTop_toBottomOf="@+id/txtcardFinances"
                 app:layout_constraintVertical_bias="0.888" />
 
+            <RelativeLayout
+                android:id="@+id/progress_layout"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_margin="10dp"
+                android:layout_marginEnd="4dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.70"
+                app:layout_constraintStart_toEndOf="@+id/txtcardFinances"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.333">
+                
+                <ProgressBar
+                    android:id="@+id/progress_bar"
+                    style="?android:progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/circle_shape"
+                    android:indeterminate="false"
+                    android:progressDrawable="@drawable/circle_progrees_bar"
+                    android:textAlignment="center"
+                    />
+                
+                <TextView
+                    android:id="@+id/progress_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:text="---"
+                    android:textColor="@color/white"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    />
+
+
+            </RelativeLayout>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
@@ -419,6 +460,41 @@
 
     </androidx.cardview.widget.CardView>
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="60sp"
+        app:layout_constraintBottom_toTopOf="@+id/WelcomeSlider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardFinances4">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5sp"
+            android:id="@+id/marquee"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:focusable="false"
+            android:textColor="@color/typography"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:text="@string/marque1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/marquee2"
+            android:textColor="@color/verdegod"
+            android:layout_marginTop="30sp"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:focusable="false"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:text="@string/marque2" />
+
+    </androidx.cardview.widget.CardView>
 
     <com.smarteist.autoimageslider.SliderView
         android:id="@+id/WelcomeSlider"
