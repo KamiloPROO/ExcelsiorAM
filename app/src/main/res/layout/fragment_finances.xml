@@ -106,7 +106,7 @@
                 android:layout_width="114dp"
                 android:layout_height="13dp"
                 android:text="Master Investor"
-                android:textColor="@color/typography"
+                android:textColor="@color/mozport"
                 android:textSize="11sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -194,8 +194,6 @@
                     android:textSize="28sp"
                     android:textStyle="bold"
                     />
-
-
             </RelativeLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -408,7 +406,7 @@
                 android:layout_height="28dp"
                 android:layout_marginStart="8dp"
                 android:text="U$10500.00"
-                android:textColor="@color/typography"
+                android:textColor="@color/verdegod"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

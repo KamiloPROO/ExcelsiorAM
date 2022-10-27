@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import ammovil.com.excelsior.databinding.FragmentFinancesBinding;
 
+
 public class FinancesFragment extends Fragment {
     private ProgressBar progressBarFin;
     int i = 0;
