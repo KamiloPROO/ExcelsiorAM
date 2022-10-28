@@ -15,10 +15,10 @@
         android:background="@drawable/log"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.009" />
+        app:layout_constraintVertical_bias="0.068" />
 
     <TextView
         android:id="@+id/nomLog"
@@ -33,16 +33,15 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.228" />
+        app:layout_constraintVertical_bias="0.277" />
 
     <TextView
         android:id="@+id/nomUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Username"
-        android:textColor="@color/cards"
+        android:textColor="@color/white"
         android:textSize="23sp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/edUser"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.163"
@@ -57,7 +56,7 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:background="@drawable/border_txt_imput"
-        android:hint="@string/user"
+
         android:textColor="@color/white"
         android:textColorHint="#ffffff"
         android:textSize="13sp"
@@ -66,16 +65,15 @@
         app:layout_constraintHorizontal_bias="0.45"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.408" />
+        app:layout_constraintVertical_bias="0.439" />
 
     <TextView
         android:id="@+id/nomPasw"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Password"
-        android:textColor="@color/cards"
+        android:textColor="@color/white"
         android:textSize="23sp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/edPasw"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.161"
@@ -90,7 +88,6 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:background="@drawable/border_txt_imput"
-        android:hint="@string/password"
         android:textColor="@color/white"
         android:textColorHint="#ffffff"
         android:textSize="13sp"
