@@ -15,9 +15,24 @@
         android:theme="@style/Theme.Excelsior"
         tools:targetApi="31">
         <activity
-            android:name=".PopPapTeam"
-            android:theme="@style/Theme.Excelsior.pup"
+            android:name=".Mensaje_Veri"
+            android:exported="false"
+            android:theme="@style/Theme.Excelsior.pup">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Codigo_Veri"
             android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".PopPapTeam"
+            android:exported="false"
+            android:theme="@style/Theme.Excelsior.pup">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
