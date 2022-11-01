@@ -10,6 +10,7 @@
 
     <color name="typography">#63318a</color>
     <color name="cards">#751ec1</color>
+    <color name="cardsWhite">#FFFFFF</color>
     <color name="verdegod">#1BBD30</color>
     <color name="mozport">#f7931e</color>
     <color name="grissProgre">#696968</color>

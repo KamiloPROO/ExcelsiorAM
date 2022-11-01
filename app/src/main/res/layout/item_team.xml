@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="380dp"
+    android:layout_height="180dp">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="380dp"
+        android:layout_height="170dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.03">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="380dp"
+            android:layout_height="170dp"
+            android:background="@drawable/border_cards">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="123dp"
+                android:layout_height="123dp"
+                android:layout_marginEnd="248dp"
+                android:background="@drawable/profilemorado"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/nameIntTeam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="CAMILO GOD"
+                android:textColor="@color/typography"
+                android:textColorHint="@color/typography"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.477"
+                app:layout_constraintStart_toEndOf="@+id/imageView2"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.195" />
+
+            <TextView
+                android:id="@+id/planIntTeam"
+                android:layout_width="136dp"
+                android:layout_height="24dp"
+                android:hint="PLAN"
+                android:textColor="@color/mozport"
+                android:textColorHint="@color/typography"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.136"
+                app:layout_constraintStart_toEndOf="@+id/imageView2"
+                app:layout_constraintTop_toBottomOf="@+id/nameIntTeam"
+                app:layout_constraintVertical_bias="0.075" />
+
+
+            <TextView
+                android:id="@+id/stateIntTeam"
+                android:layout_width="81dp"
+                android:layout_height="24dp"
+                android:text="|  ESTADO"
+                android:textColor="@color/typography"
+                android:textColorHint="@color/typography"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/planIntTeam"
+                app:layout_constraintTop_toBottomOf="@+id/nameIntTeam"
+                app:layout_constraintVertical_bias="0.075" />
+
+            <TextView
+                android:id="@+id/usIntTeam"
+                android:layout_width="25dp"
+                android:layout_height="24dp"
+                android:text="U$"
+                android:textColor="@color/verdegod"
+                android:textColorHint="@color/typography"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.021"
+                app:layout_constraintStart_toEndOf="@+id/imageView2"
+                app:layout_constraintTop_toBottomOf="@+id/planIntTeam"
+                app:layout_constraintVertical_bias="0.083" />
+
+            <TextView
+                android:id="@+id/saldoIntTeam"
+                android:layout_width="120dp"
+                android:layout_height="24dp"
+                android:text="U$ 4550.00"
+                android:textColor="@color/verdegod"
+                android:textColorHint="@color/typography"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.235"
+                app:layout_constraintStart_toEndOf="@+id/imageView2"
+                app:layout_constraintTop_toBottomOf="@+id/planIntTeam"
+                app:layout_constraintVertical_bias="0.083" />
+
+            <TextView
+                android:id="@+id/invitadoIntTeam"
+                android:layout_width="80dp"
+                android:layout_height="24dp"
+                android:text="Directos:"
+                android:textColor="@color/typography"
+                android:textColorHint="@color/typography"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.307"
+                app:layout_constraintStart_toEndOf="@+id/imageView2"
+                app:layout_constraintTop_toBottomOf="@+id/planIntTeam"
+                app:layout_constraintVertical_bias="0.816" />
+
+            <TextView
+                android:id="@+id/invitadoNumIntTeam"
+                android:layout_width="30dp"
+                android:layout_height="24dp"
+                android:hint="3"
+                android:textAlignment="center"
+                android:textColor="@color/typography"
+                android:textColorHint="@color/typography"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/invitadoIntTeam"
+                app:layout_constraintTop_toBottomOf="@+id/saldoIntTeam"
+                app:layout_constraintVertical_bias="0.666" />
+
+            <ImageView
+                android:id="@+id/imgPerfilInv"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/profilemorado"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/invitadoIntTeam"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/saldoIntTeam"
+                app:layout_constraintVertical_bias="0.8" />
+
+            <TextView
+                android:id="@+id/estadoIntTeam"
+                android:layout_width="81dp"
+                android:layout_height="24dp"
+                android:hint="ACTIVO"
+                android:textColor="@color/verdegod"
+                android:textColorHint="@color/typography"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/planIntTeam"
+                app:layout_constraintTop_toBottomOf="@+id/nameIntTeam"
+                app:layout_constraintVertical_bias="0.4" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

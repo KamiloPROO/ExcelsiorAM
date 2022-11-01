@@ -15,7 +15,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/cards"
+            android:background="@drawable/darkbatoolbar"
             app:popupTheme="@style/Theme.Excelsior.PopupOverlay" />
 
     </com.google.android.material.appbar.AppBarLayout>

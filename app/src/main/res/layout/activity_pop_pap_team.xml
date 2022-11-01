@@ -13,23 +13,23 @@
         android:layout_height="wrap_content"
         android:text="REFEREAL LINK:"
         android:textColor="@color/white"
-        android:textSize="35sp"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.393" />
+        app:layout_constraintVertical_bias="0.106" />
 
     <TextView
         android:id="@+id/link"
         android:layout_width="wrap_content"
         android:layout_height="50sp"
-        android:background="@drawable/border_txt"
+        android:background="@drawable/border_popud"
         android:gravity="center"
         android:text="@string/link"
         android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.473"
@@ -40,7 +40,7 @@
     <Button
         android:id="@+id/btnTeamPopud"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="40sp"
         android:background="@drawable/btn_color_popud"
         android:text="Copy"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -48,7 +48,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/link"
-        app:layout_constraintVertical_bias="0.063" />
+        app:layout_constraintVertical_bias="0.744" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
