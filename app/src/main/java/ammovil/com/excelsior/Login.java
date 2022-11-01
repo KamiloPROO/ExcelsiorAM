@@ -91,7 +91,7 @@ public class Login extends AppCompatActivity {
             iniciaSesionRequestDto.Login = login;
             iniciaSesionRequestDto.Password = password;
 
-            Apiervice apiervice = RetrofitHelper.retrofilBuild().create(Apiervice.class);
+            Apiervice apiervice = RetrofitHelper.retrofilBuild(Constantes.BASE_URL_PERSONAS).create(Apiervice.class);
 
             Call<PersonaResponseDto> call = apiervice.IniciarSesion(iniciaSesionRequestDto);
             call.enqueue(new Callback<PersonaResponseDto>() {

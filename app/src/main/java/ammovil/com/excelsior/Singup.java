@@ -77,7 +77,7 @@ public class Singup extends AppCompatActivity {
         personaModelDto.Documento = idTxtNumeroIdentifiacion.getText().toString();
         personaModelDto.IdProyecto = Constantes.ID_PROYECTO;
         personaModelDto.IdRol = Constantes.ID_ROL_PERSONA_NATURAL;
-        Apiervice apiervice = RetrofitHelper.retrofilBuild().create(Apiervice.class);
+        Apiervice apiervice = RetrofitHelper.retrofilBuild(Constantes.BASE_URL_PERSONAS).create(Apiervice.class);
         Call<ResponseDto> call = apiervice.GuardarNuevaPersona(personaModelDto);
         call.enqueue(new Callback<ResponseDto>() {
             @Override

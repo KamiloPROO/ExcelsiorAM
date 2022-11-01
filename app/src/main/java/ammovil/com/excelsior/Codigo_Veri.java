@@ -85,7 +85,7 @@ public class Codigo_Veri extends AppCompatActivity {
         consultaUsuarioRequestDto.CodigoVerificacion = codigoVerifacion;
 
 
-        Apiervice apiervice = RetrofitHelper.retrofilBuild().create(Apiervice.class);
+        Apiervice apiervice = RetrofitHelper.retrofilBuild(Constantes.BASE_URL_PERSONAS).create(Apiervice.class);
         Call<Boolean> call = apiervice.VerificarCodigo(consultaUsuarioRequestDto);
         call.enqueue(new Callback<Boolean>() {
             @Override

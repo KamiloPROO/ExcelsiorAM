@@ -6,8 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitHelper {
     private static Retrofit retrofit = null;
 
-    public static Retrofit retrofilBuild() {
-        String baseUrl = "http://52.175.225.67:8082/";
+    public static Retrofit retrofilBuild(String baseUrl) {
         if (retrofit == null) {
             retrofit = new Retrofit.Builder()
                     .baseUrl(baseUrl)
