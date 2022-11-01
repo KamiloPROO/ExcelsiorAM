@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="360sp"
+    android:layout_marginTop="10sp"
+    android:layout_marginLeft="30sp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="360sp"
+        android:layout_height="470sp"
+        app:cardCornerRadius="15sp"
+        app:cardElevation="20sp"
+        android:layout_marginTop="20sp"
+        android:layout_marginRight="100sp"
+        app:cardBackgroundColor="@color/black"
+        tools:ignore="MissingConstraints">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="360sp"
+            android:layout_height="470sp"
+            android:layout_gravity="center"
+            android:background="@drawable/border_cards_planes">
+
+
+            <TextView
+                android:id="@+id/titu2Plan6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="INVESTOR"
+                android:textColor="@color/plan6"
+                android:textSize="30sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.85"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.286" />
+
+            <ImageView
+                android:id="@+id/imageView326"
+                android:layout_width="238dp"
+                android:layout_height="251dp"
+                android:background="@drawable/aqua"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+
+            <TextView
+                android:id="@+id/saldoPlanInicial"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="U$150000"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.192"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/saldoPlanFinal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="U$150000"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.834"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/redPlan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:text="Rendimiento mensual hasta el "
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/red2Plan"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.655" />
+
+            <ImageView
+                android:id="@+id/imgRedPlan"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="4dp"
+                android:background="@drawable/planaqua"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/redPlan"
+                app:layout_constraintHorizontal_bias="0.857"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imageView326"
+                app:layout_constraintVertical_bias="0.651" />
+
+            <TextView
+                android:id="@+id/red2Plan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                android:text="6%"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.658" />
+
+            <TextView
+                android:id="@+id/tituActPlan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="64dp"
+                android:text="Activación Mensual"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toStartOf="@+id/tituAct2Plan"
+                app:layout_constraintTop_toBottomOf="@+id/redPlan" />
+
+
+            <ImageView
+                android:id="@+id/chulo6verde"
+                android:layout_width="20dp"
+                android:layout_height="30dp"
+                android:background="@drawable/chuloaqua"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tituActPlan"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgRedPlan"
+                app:layout_constraintVertical_bias="0.161" />
+
+            <ImageView
+                android:id="@+id/chuloupa"
+                android:layout_width="25dp"
+                android:layout_height="30dp"
+                android:layout_marginBottom="92dp"
+                android:background="@drawable/uparrow"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/red2Plan"
+                app:layout_constraintTop_toBottomOf="@+id/saldoPlanInicial"
+                app:layout_constraintVertical_bias="0.344" />
+
+            <TextView
+                android:id="@+id/tituAct2Plan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="36dp"
+                android:text="U$ 50"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/red2Plan"
+                app:layout_constraintVertical_bias="0.223" />
+
+            <Button
+                android:id="@+id/btnActPlan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="activar"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.502"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tituAct2Plan"
+                app:layout_constraintVertical_bias="0.709" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
