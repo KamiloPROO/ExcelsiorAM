@@ -24,6 +24,7 @@
 
 
     <EditText
+        android:id="@+id/idUno"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:background="@drawable/border_txt_imput"
@@ -83,7 +84,7 @@
         app:layout_constraintVertical_bias="0.087" />
 
     <Button
-        android:id="@+id/btnVeri"
+        android:id="@+id/idBtnVerificar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="verificar"
