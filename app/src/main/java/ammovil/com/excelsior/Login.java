@@ -1,35 +1,49 @@
 package ammovil.com.excelsior;
 
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.net.wifi.hotspot2.pps.HomeSp;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import ammovil.com.excelsior.data.request.IniciaSesionRequestDto;
+import ammovil.com.excelsior.data.response.PersonaResponseDto;
+import ammovil.com.excelsior.network.RetrofitHelper;
+import ammovil.com.excelsior.network.services.Apiervice;
+import ammovil.com.excelsior.utils.Constantes;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class Login extends AppCompatActivity {
 
-    TextView sinup , forgot;
-    Button login;
-    ImageView forgopass;
+    private TextView sinup, forgot;
+    private Button btnLogin;
+    private ImageView forgopass;
+    private EditText txtUsuario, txtContasenia;
+
+    private IniciaSesionRequestDto iniciaSesionRequestDto;
+    private PersonaResponseDto personaResponseDto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        sinup = findViewById(R.id.txtNewC);
-        forgot = findViewById(R.id.txtRC);
-        login = findViewById(R.id.btnLogin);
-        forgopass = findViewById(R.id.logoRC);
+        referenciaCamposFormulario();
 
         sinup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(Login.this,Singup.class);
+                Intent intent = new Intent(Login.this, Singup.class);
                 startActivity(intent);
 
             }
@@ -39,20 +53,19 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(Login.this,Password_recovery.class);
+                Intent intent = new Intent(Login.this, Password_recovery.class);
                 startActivity(intent);
 
             }
 
         });
 
-        login.setOnClickListener(new View.OnClickListener() {
+        btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                Intent intent = new Intent(Login.this,Mensaje_Veri.class);
-                startActivity(intent);
-
+                if (validarCampoFormulario()) {
+                    llamarRetrofit(txtUsuario.getText().toString(), txtContasenia.getText().toString());
+                }
             }
         });
 
@@ -60,11 +73,100 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(Login.this,Password_recovery.class);
+                Intent intent = new Intent(Login.this, Password_recovery.class);
                 startActivity(intent);
 
             }
         });
+    }
 
+    /**
+     * Hacemos el llamado al api servide de iniciar sesión
+     */
+    private void llamarRetrofit(String login, String password) {
+        try {
+            iniciaSesionRequestDto = new IniciaSesionRequestDto();
+            iniciaSesionRequestDto.IdProyecto = Constantes.ID_PROYECTO;
+            iniciaSesionRequestDto.IdPersona = 81.0;
+            iniciaSesionRequestDto.Login = login;
+            iniciaSesionRequestDto.Password = password;
+
+            Apiervice apiervice = RetrofitHelper.retrofilBuild().create(Apiervice.class);
+
+            Call<PersonaResponseDto> call = apiervice.IniciarSesion(iniciaSesionRequestDto);
+            call.enqueue(new Callback<PersonaResponseDto>() {
+                @Override
+                public void onResponse(Call<PersonaResponseDto> call, Response<PersonaResponseDto> response) {
+                    personaResponseDto = response.body();
+                    Log.e("RESPONSELOGIN", personaResponseDto.CodigoRespuesta + " Mensaje " +
+                            personaResponseDto.MensajeRespuesta);
+
+                    if (personaResponseDto != null) {
+                        if (personaResponseDto.CodigoRespuesta.equals(Integer.toString(Constantes.CODIGO_EXITOSO))) {
+                            Toast.makeText(Login.this, personaResponseDto.MensajeRespuesta, Toast.LENGTH_SHORT).show();
+                            Intent i = new Intent(Login.this, MainMenuActivity.class);
+                            startActivity(i);
+                            finish();
+                        }else{
+                            Toast.makeText(Login.this, personaResponseDto.MensajeRespuesta, Toast.LENGTH_SHORT).show();
+                        }
+                    } else {
+                        Toast.makeText(Login.this, "Datos vacios", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<PersonaResponseDto> call, Throwable t) {
+                    Toast.makeText(Login.this, Constantes.ERROR_RETROFIT, Toast.LENGTH_SHORT).show();
+                }
+            });
+        } catch (Exception e) {
+            Toast.makeText(Login.this, Constantes.ERROR_RETROFIT, Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    /**
+     * Referencia datos formulario
+     */
+    private void referenciaCamposFormulario() {
+        try {
+            txtUsuario = findViewById(R.id.edUser);
+            txtContasenia = findViewById(R.id.edPasw);
+            sinup = findViewById(R.id.txtNewC);
+            forgot = findViewById(R.id.txtRC);
+            forgopass = findViewById(R.id.logoRC);
+
+            btnLogin = findViewById(R.id.btnLogin);
+        } catch (Exception e) {
+            Toast.makeText(this, Constantes.ERROR_REFERENCIA_FORMULARIO, Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
+    /**
+     * Referencia datos formulario
+     */
+    private boolean validarCampoFormulario() {
+        Boolean esValido = true;
+        try {
+            if (txtUsuario.getText().toString().isEmpty()) {
+                txtUsuario.setError(Constantes.ERROR_FORMULARIO_VACIO);
+                esValido = false;
+            } else {
+                txtUsuario.setError(null);
+                esValido = true;
+            }
+            if (txtContasenia.getText().toString().isEmpty()) {
+                txtContasenia.setError(Constantes.ERROR_FORMULARIO_VACIO);
+                esValido = false;
+            } else {
+                txtContasenia.setError(null);
+                esValido = true;
+            }
+
+        } catch (Exception e) {
+            Toast.makeText(this, Constantes.ERROR_VALIDANDO_FORMULARIO, Toast.LENGTH_SHORT).show();
+        }
+        return esValido;
     }
 }
