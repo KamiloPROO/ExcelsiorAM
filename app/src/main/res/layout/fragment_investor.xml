@@ -33,7 +33,7 @@
             >
 
             <androidx.cardview.widget.CardView
-                android:layout_width="330sp"
+                android:layout_width="360sp"
                 android:layout_height="470sp"
                 app:cardCornerRadius="15sp"
                 app:cardElevation="20sp"
@@ -43,7 +43,7 @@
                 >
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="330sp"
+                    android:layout_width="360sp"
                     android:layout_height="470sp"
                     android:background="@drawable/border_cards_planes">
 
@@ -208,7 +208,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:layout_width="330sp"
+                android:layout_width="360sp"
                 android:layout_height="470sp"
                 app:cardCornerRadius="15sp"
                 app:cardElevation="20sp"
@@ -218,7 +218,7 @@
                 >
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="330sp"
+                    android:layout_width="360sp"
                     android:layout_height="470sp"
                     android:background="@drawable/border_cards_planes">
 
@@ -383,7 +383,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:layout_width="330sp"
+                android:layout_width="360sp"
                 android:layout_height="470sp"
                 app:cardCornerRadius="15sp"
                 app:cardElevation="20sp"
@@ -393,7 +393,7 @@
                 >
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="330sp"
+                    android:layout_width="360sp"
                     android:layout_height="470sp"
                     android:background="@drawable/border_cards_planes">
 
@@ -558,7 +558,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:layout_width="330sp"
+                android:layout_width="360sp"
                 android:layout_height="470sp"
                 app:cardCornerRadius="15sp"
                 app:cardElevation="20sp"
@@ -568,7 +568,7 @@
                 >
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="330sp"
+                    android:layout_width="360sp"
                     android:layout_height="470sp"
                     android:background="@drawable/border_cards_planes">
 
@@ -733,7 +733,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:layout_width="330sp"
+                android:layout_width="360sp"
                 android:layout_height="470sp"
                 app:cardCornerRadius="15sp"
                 app:cardElevation="20sp"
@@ -743,7 +743,7 @@
                 >
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="330sp"
+                    android:layout_width="360sp"
                     android:layout_height="470sp"
                     android:background="@drawable/border_cards_planes">
 
@@ -821,7 +821,7 @@
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_marginStart="4dp"
-                        android:background="@drawable/planrosa"
+                        android:background="@drawable/planrojo"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/redPlan5"
                         app:layout_constraintHorizontal_bias="0.857"
@@ -858,7 +858,7 @@
                         android:id="@+id/chulo5verde"
                         android:layout_width="20dp"
                         android:layout_height="30dp"
-                        android:background="@drawable/chulorosa"
+                        android:background="@drawable/chulorojo"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/tituActPlan5"
                         app:layout_constraintHorizontal_bias="1.0"
@@ -907,7 +907,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:layout_width="330sp"
+                android:layout_width="360sp"
                 android:layout_height="470sp"
                 app:cardCornerRadius="15sp"
                 app:cardElevation="20sp"
@@ -917,7 +917,7 @@
                 >
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="330sp"
+                    android:layout_width="360sp"
                     android:layout_height="470sp"
                     android:background="@drawable/border_cards_planes">
 
@@ -995,7 +995,7 @@
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_marginStart="4dp"
-                        android:background="@drawable/planrosa"
+                        android:background="@drawable/planaqua"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/redPlan6"
                         app:layout_constraintHorizontal_bias="0.857"
@@ -1032,7 +1032,7 @@
                         android:id="@+id/chulo6verde"
                         android:layout_width="20dp"
                         android:layout_height="30dp"
-                        android:background="@drawable/chulorosa"
+                        android:background="@drawable/chuloaqua"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/tituActPlan6"
                         app:layout_constraintHorizontal_bias="1.0"

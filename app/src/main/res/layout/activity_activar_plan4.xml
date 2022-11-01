@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/darkba"
+    tools:context=".ActivarPlan4">
+
+    <ImageView
+        android:id="@+id/logoExs"
+        android:layout_width="127dp"
+        android:layout_height="118dp"
+        android:background="@drawable/log"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.105"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textMyTeam"
+        android:layout_width="227dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="INVESTOR'S  PLAN"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/logoExs"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.011" />
+
+    <TextView
+        android:id="@+id/textFinances2"
+        android:layout_width="145dp"
+        android:layout_height="44dp"
+        android:text="/ Members only"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.752"
+        app:layout_constraintStart_toEndOf="@+id/logoExs"
+        app:layout_constraintTop_toBottomOf="@+id/textMyTeam"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+
+    <TextView
+        android:id="@+id/tituPlan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MASTER"
+        android:textColor="@color/plan4"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/titu2Plan5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.152"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/titu2Plan5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="INVESTOR"
+        android:textColor="@color/plan4"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.139"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.312" />
+
+
+
+
+    <TextView
+        android:id="@+id/txtSaldoPlan1"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginEnd="16dp"
+        android:text="U$30000"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textFinances2"
+        app:layout_constraintVertical_bias="0.131" />
+
+    <TextView
+        android:id="@+id/txtSaldo2Plan1"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginEnd="16dp"
+        android:text="U$49900"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textFinances2"
+        app:layout_constraintVertical_bias="0.198" />
+
+
+
+
+    <ImageView
+        android:id="@+id/imgBilletePlan"
+        android:layout_width="62dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="300dp"
+        android:background="@drawable/avalible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/txtSaldoPlan1"
+        app:layout_constraintHorizontal_bias="0.772"
+        app:layout_constraintStart_toEndOf="@+id/tituPlan"
+        app:layout_constraintTop_toBottomOf="@+id/textFinances2"
+        app:layout_constraintVertical_bias="0.252" />
+
+
+
+
+    <TextView
+        android:id="@+id/redPlan5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:text="Rendimiento mensual hasta el "
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/red2Plan5"
+        app:layout_constraintTop_toBottomOf="@+id/titu2Plan5"
+        app:layout_constraintVertical_bias="0.082" />
+
+    <ImageView
+        android:id="@+id/imgRedPlan5"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="384dp"
+        android:background="@drawable/planrosa"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/redPlan5"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titu2Plan5"
+        app:layout_constraintVertical_bias="0.482" />
+
+    <TextView
+        android:id="@+id/red2Plan5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="108dp"
+        android:text="6%"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.42" />
+
+    <TextView
+        android:id="@+id/tituActPlan5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="80dp"
+        android:text="Activación Mensual"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/tituAct2Plan5"
+        app:layout_constraintTop_toBottomOf="@+id/redPlan5" />
+
+
+
+    <ImageView
+        android:id="@+id/chulo5verde"
+        android:layout_width="20dp"
+        android:layout_height="30dp"
+        android:background="@drawable/chulorosa"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tituActPlan5"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgRedPlan5"
+        app:layout_constraintVertical_bias="0.018" />
+
+
+
+    <ImageView
+        android:id="@+id/chuloupa5"
+        android:layout_width="25dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="400dp"
+        android:background="@drawable/uparrow"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/red2Plan5"
+        app:layout_constraintTop_toBottomOf="@+id/txtSaldo2Plan1"
+        app:layout_constraintVertical_bias="0.829" />
+
+    <TextView
+        android:id="@+id/tituAct2Plan5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="80dp"
+        android:text="U$ 50"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/red2Plan5"
+        app:layout_constraintVertical_bias="0.013" />
+
+
+
+    <TextView
+        android:id="@+id/txtMontoPlanRosa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MONTO A OPERAR"
+        android:textColor="@color/plan4"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/editMontoOperarPlan4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tituActPlan5"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/editMontoOperarPlan4"
+        android:layout_width="200sp"
+        android:layout_height="30sp"
+        android:layout_marginBottom="252dp"
+        android:background="@drawable/border_edit_planrosa"
+        android:hint="U$0000000000000"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.075"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+    <TextView
+        android:id="@+id/txtWalletPagarPlanRosa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="WALLET A PAGAR"
+        android:textColor="@color/plan4"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.059"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editMontoOperarPlan4"
+        app:layout_constraintVertical_bias="0.052" />
+
+    <EditText
+        android:id="@+id/editWalletPagarPlan4"
+        android:layout_width="200sp"
+        android:layout_height="30sp"
+        android:layout_marginBottom="112dp"
+        android:background="@drawable/border_edit_planrosa"
+        android:hint="dggautyr0ehaioafha"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.075"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtWalletPagarPlanRosa"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+
+    <TextView
+        android:id="@+id/txtSendVerficationCodePlan4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="SEND VERIFICATION CODE"
+        android:textColor="@color/plan4"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.073"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editWalletPagarPlan4" />
+
+    <EditText
+        android:id="@+id/editSendVereficationCodePLan4"
+        android:layout_width="200sp"
+        android:layout_height="30sp"
+        android:background="@drawable/border_edit_planrosa"
+        android:hint="dggautyr0ehaioafha"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.075"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtSendVerficationCodePlan4"
+        app:layout_constraintVertical_bias="0.023" />
+
+
+
+    <TextView
+        android:id="@+id/txtFEE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:text="FEE"
+        android:textColor="@color/plan4"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.581"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tituAct2Plan5" />
+
+    <EditText
+        android:id="@+id/editFeePlan4"
+        android:layout_width="180sp"
+        android:layout_height="30sp"
+        android:background="@drawable/border_edit_planrosa"
+        android:hint="U$0000"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.961"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtFEE"
+        app:layout_constraintVertical_bias="0.011" />
+
+
+
+    <TextView
+        android:id="@+id/txtVereficationCodePlan4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="VERIFICATION CODE"
+        android:textColor="@color/plan4"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.694"
+        app:layout_constraintStart_toEndOf="@+id/txtWalletPagarPlanRosa"
+        app:layout_constraintTop_toBottomOf="@+id/editFeePlan4" />
+
+    <EditText
+        android:id="@+id/editVereficationCodePlan4"
+        android:layout_width="180sp"
+        android:layout_height="30sp"
+        android:background="@drawable/border_edit_planrosa"
+        android:hint="*********"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toEndOf="@+id/editWalletPagarPlan4"
+        app:layout_constraintTop_toBottomOf="@+id/txtVereficationCodePlan4" />
+
+
+    <TextView
+        android:id="@+id/txtTotalPlanRosa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="TOTAL"
+        android:textColor="@color/plan4"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/editTotalPlan2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toEndOf="@+id/txtSendVerficationCodePlan4"
+        app:layout_constraintTop_toBottomOf="@+id/editVereficationCodePlan4"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/editTotalPlan4"
+        android:layout_width="180sp"
+        android:layout_height="30sp"
+        android:layout_marginBottom="124dp"
+        android:background="@drawable/border_edit_planrosa"
+        android:hint="U$0000"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toEndOf="@+id/editSendVereficationCodePLan4" />
+
+
+    <Button
+        android:id="@+id/btnActivarPlan4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ACTIVAR"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTotalPlan4" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
