@@ -17,4 +17,10 @@
 
     <color name="menu">#19162c</color>
 
+    <color name="plan1">#3472EF</color>
+    <color name="plan2">#009245</color>
+    <color name="plan3">#F26431</color>
+    <color name="plan4">#9E005D</color>
+    <color name="plan5">#C1272D</color>
+    <color name="plan6">#00A99D</color>
 </resources>

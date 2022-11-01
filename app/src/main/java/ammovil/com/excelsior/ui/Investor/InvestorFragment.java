@@ -10,29 +10,18 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import ammovil.com.excelsior.R;
 import ammovil.com.excelsior.databinding.FragmentInvestorBinding;
 
 public class InvestorFragment extends Fragment {
 
-    private FragmentInvestorBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        InvestorViewModel homeViewModel =
-                new ViewModelProvider(this).get(InvestorViewModel.class);
 
-        binding = FragmentInvestorBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
+        View view = inflater.inflate(R.layout.fragment_investor, container, false);
 
-        final TextView textView = binding.textInvestor;
-        homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
-        return root;
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        binding = null;
+        return view;
     }
 
 }
