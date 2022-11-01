@@ -8,7 +8,7 @@ public class Constantes {
     public static final String ERROR_REFERENCIA_FORMULARIO = "Ha ocurrido un error en la refeencia del formulario";
     public static final String ERROR_RETROFIT = "Ha ocurrido un error con retrofit";
     public static final String BASE_URL_PERSONAS = "http://52.175.225.67:8082/";
-    public static final String BASE_URL_EXCELSIOR = "http://52.175.225.67:8082/";
+    public static final String BASE_URL_EXCELSIOR = "http://52.175.225.67:8085/";//cambiar por puerto nuevo
     public static final int CODIGO_EXITOSO = 200;
     public static final int CODIGO_ERROR = 500;
 }
