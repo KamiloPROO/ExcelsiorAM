@@ -16,7 +16,6 @@ public interface Apiervice {
     @POST("/api/persona/VerificarCodigo")
     Call<Boolean> VerificarCodigo(@Body ConsultaUsuarioRequestDto consultaUsuarioRequestDto);
 
-
     @POST("/api/persona/IniciarSesion")
     Call<PersonaResponseDto> IniciarSesion(@Body IniciaSesionRequestDto iniciaSesionRequestDto);
 
