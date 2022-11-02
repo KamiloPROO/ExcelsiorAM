@@ -1,5 +1,4 @@
-package ammovil.com.excelsior.controller.adapter;
-
+package ammovil.com.excelsior.controller.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,9 +9,12 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import ammovil.com.excelsior.Model.ModelTeam;
 import ammovil.com.excelsior.R;
+import ammovil.com.excelsior.RecyclerViewAdaptador;
 import ammovil.com.excelsior.data.response.TiposMembresiaResponseDto;
 
 public class AdapterInvestor extends RecyclerView.Adapter<AdapterInvestor.ViewHolder> {
@@ -22,7 +24,6 @@ public class AdapterInvestor extends RecyclerView.Adapter<AdapterInvestor.ViewHo
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView descripcion, fee, rendimiento, rangoIcial, rangoFinal;
-
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
@@ -57,7 +58,6 @@ public class AdapterInvestor extends RecyclerView.Adapter<AdapterInvestor.ViewHo
         holder.rendimiento.setText(datos.getRendimiento().toString());
         holder.rangoIcial.setText(datos.getRangoInicial().toString());
         holder.rangoFinal.setText(datos.getRangoFinal().toString());
-
 
     }
 

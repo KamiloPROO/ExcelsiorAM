@@ -23,7 +23,7 @@ public interface Apiervice {
     @POST("/api/persona/IniciarSesion")
     Call<PersonaResponseDto> IniciarSesion(@Body IniciaSesionRequestDto iniciaSesionRequestDto);
 
-    @GET("/api/TiposMembresia/ListarTiposMembresia")
+    @GET("api/TiposMembresia/ListarTiposMembresia")
     Call<List<TiposMembresiaResponseDto>> ListarTiposMembresia();
 
 }

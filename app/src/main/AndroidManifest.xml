@@ -8,6 +8,10 @@
     <uses-permission android:name="android.permission.READ_SMS" />
 
     <application
+        android:backupInForeground="true"
+        android:requiredForAllUsers="true"
+        android:forceQueryable="true"
+        android:requestForegroundServiceExemption="true"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -110,12 +114,12 @@
             android:label="@string/title_activity_main_menu"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Excelsior.NoActionBar">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -123,11 +127,7 @@
         <activity
             android:name=".Splash"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
             <meta-data
                 android:name="android.app.lib_name"
