@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -32,6 +33,7 @@ import ammovil.com.excelsior.databinding.FragmentInvestorBinding;
 import ammovil.com.excelsior.network.RetrofitHelper;
 import ammovil.com.excelsior.network.services.Apiervice;
 import ammovil.com.excelsior.utils.Constantes;
+import ammovil.com.excelsior.utils.Loader;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -45,10 +47,12 @@ public class InvestorFragment extends Fragment {
     private AdapterInvestor adapterInvestor;
     private List<TiposMembresiaResponseDto> list;
     private FragmentInvestorBinding binding;
-    private ProgressBar progressBar;
+    private LinearLayout progressBar;
+    private Loader loader;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+        loader = new Loader();
 
         binding = FragmentInvestorBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
@@ -71,11 +75,6 @@ public class InvestorFragment extends Fragment {
                 final List<TiposMembresiaResponseDto> listaMembresias = response.body();
                 //list = response.body();
                 progressBar.setVisibility(View.GONE);
-                if (response.body() != null) {
-                    Log.e("LISTAAAA", response.body().toString());
-                } else {
-                    Toast.makeText(requireContext(), "Esat vacio", Toast.LENGTH_SHORT).show();
-                }
 
 
                 recyclerView = view.findViewById(R.id.rcInvestor);
@@ -87,6 +86,7 @@ public class InvestorFragment extends Fragment {
                 adapterInvestor = new AdapterInvestor(listaMembresias, requireContext());
 
                 recyclerView.setAdapter(adapterInvestor);
+
                 adapterInvestor.setClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -106,6 +106,7 @@ public class InvestorFragment extends Fragment {
             @Override
             public void onFailure(Call<List<TiposMembresiaResponseDto>> call, Throwable t) {
                 Toast.makeText(requireContext(), Constantes.ERROR_RETROFIT, Toast.LENGTH_SHORT).show();
+                loader.showLoader(requireActivity()).dismiss();
             }
         });
 

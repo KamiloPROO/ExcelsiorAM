@@ -110,7 +110,7 @@
                         <ImageView
                             android:layout_width="32dp"
                             android:layout_height="32dp"
-                            android:src="@drawable/orange" />
+                            android:src="@drawable/total" />
 
                         <TextView
                             android:id="@+id/idTxtRangoInicial"
@@ -151,7 +151,8 @@
                     <ImageView
                         android:layout_width="@dimen/size_32dp"
                         android:layout_height="@dimen/size_32dp"
-                        android:src="@color/mozport" />
+                        android:layout_marginEnd="@dimen/m_5dp"
+                        android:src="@drawable/planblue" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -169,9 +170,9 @@
                         android:textSize="@dimen/text_22sp" />
 
                     <ImageView
-                        android:layout_width="@dimen/size_32dp"
-                        android:layout_height="@dimen/size_32dp"
-                        android:src="@drawable/finances" />
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/uparrow" />
                 </LinearLayout>
 
 
@@ -187,7 +188,7 @@
                     <ImageView
                         android:layout_width="@dimen/size_32dp"
                         android:layout_height="@dimen/size_32dp"
-                        android:src="@color/mozport" />
+                        android:src="@drawable/chuloblue" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -238,6 +239,7 @@
                     app:cardElevation="@dimen/m_10dp">
 
                     <EditText
+                        android:textAlignment="center"
                         android:id="@+id/idTxtMontoAOperar"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -282,22 +284,22 @@
                 </androidx.cardview.widget.CardView>
 
                 <TextView
-                    android:visibility="gone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/m_10dp"
                     android:text="SEND VERIFICATION CODE"
                     android:textColor="@color/white"
                     android:textSize="25sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:visibility="gone" />
 
                 <LinearLayout
-                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/size_32dp"
                     android:layout_marginEnd="@dimen/size_32dp"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:visibility="gone">
 
                     <androidx.cardview.widget.CardView
                         android:layout_width="0dp"
@@ -376,12 +378,12 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:visibility="gone"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
                         android:gravity="center"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:visibility="gone">
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -393,12 +395,12 @@
                             android:textStyle="bold" />
 
                         <LinearLayout
-                            android:visibility="gone"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="@dimen/size_32dp"
                             android:layout_marginEnd="@dimen/size_32dp"
-                            android:orientation="horizontal">
+                            android:orientation="horizontal"
+                            android:visibility="gone">
 
                             <androidx.cardview.widget.CardView
                                 android:layout_width="0dp"
@@ -428,12 +430,12 @@
                             </androidx.cardview.widget.CardView>
 
                             <Button
-                                android:enabled="false"
                                 android:id="@+id/idBtnVerificarCodigo"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:backgroundTint="@color/plan1"
+                                android:enabled="false"
                                 android:text="Verificar código" />
                         </LinearLayout>
 

@@ -18,10 +18,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -54,7 +56,7 @@ public class WalletFragment extends Fragment {
     private CrearCuentaTronResponseDto cuentaTronResponseDto;
     private CrearCuentaTronRequest crearCuentaTronRequest;
     private ConsultaCuentasTronDto consultaCuentasTronDto;
-    private ProgressBar progressBar;
+    private LinearLayout progressBar;
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager lManager;
     private CuentasTRonAdapter cuentasTRonAdapter;
@@ -62,12 +64,15 @@ public class WalletFragment extends Fragment {
     private PersonaDto personaDto;
     private String propietario = " ";
     private Double idPersona = 0.0;
+    private CardView cardView;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         binding = FragmentWalletBinding.inflate(inflater, container, false);
         progressBar = binding.idProgresVarCuentasTron;
+        cardView = binding.itemCardCuenta;
+
         idPersona = Double.valueOf(Constantes.ID_PERSONA);
 
         listarCuentasTron(idPersona);
@@ -98,6 +103,7 @@ public class WalletFragment extends Fragment {
                     if (response.body() != null) {
                         ponerDatosCuentaTron(listaCuentas);
                         binding.idBtnCrearCuentaTron.setVisibility(View.GONE);
+                        cardView.setVisibility(View.VISIBLE);
                         binding.idTxtNombrePropietario.setText(NOMBRE);
                     }
                 }
