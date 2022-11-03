@@ -1,5 +1,6 @@
 package ammovil.com.excelsior;
 
+import android.content.ClipData;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -23,6 +24,7 @@ import com.google.android.material.snackbar.Snackbar;
 import ammovil.com.excelsior.databinding.ActivityMainMenuBinding;
 import ammovil.com.excelsior.ui.Investor.InvestorFragment;
 import ammovil.com.excelsior.ui.Wallet.WalletFragment;
+import ammovil.com.excelsior.ui.admin.IndexMainAdminActivity;
 
 public class MainMenuActivity extends AppCompatActivity {
 
@@ -40,7 +42,6 @@ public class MainMenuActivity extends AppCompatActivity {
         try {
             if (getIntent().getExtras().get("Primera").toString() != null) {
                 primeraVez = getIntent().getExtras().get("Primera").toString();
-                Toast.makeText(this, primeraVez, Toast.LENGTH_SHORT).show();
                 if (primeraVez == "Si") {
                     Intent i = new Intent(this, MainMenuActivity.class);
                     startActivity(i);
@@ -48,7 +49,7 @@ public class MainMenuActivity extends AppCompatActivity {
                 }
             }
         } catch (Exception e) {
-            Toast.makeText(this, "Errpr", Toast.LENGTH_SHORT).show();
+            //
         }
 
         setSupportActionBar(binding.appBarMainMenu.toolbar);
@@ -78,17 +79,26 @@ public class MainMenuActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main_menu, menu);
+
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        SharedPreferences prefs2 = getSharedPreferences("Rol", MODE_PRIVATE);
+        String roll = prefs2.getString("RolUsuario", "vacio");
+
         int id = item.getItemId();
+
         if (id == R.id.action_logout) {
             SharedPreferences.Editor editor = getSharedPreferences("MY_PREFS_EXCELSIOR", MODE_PRIVATE).edit();
-
             editor.clear().apply();
             finish();
+        }
+        if (id == R.id.action_Administrador) {
+            Intent i = new Intent(this, IndexMainAdminActivity.class);
+            startActivity(i);
+
         }
         return super.onOptionsItemSelected(item);
     }

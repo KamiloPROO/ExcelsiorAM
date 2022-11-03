@@ -106,29 +106,30 @@ public class Login extends AppCompatActivity {
                 public void onResponse(Call<PersonaResponseDto> call, Response<PersonaResponseDto> response) {
                     personaResponseDto = response.body();
                     String codigoResponse = personaResponseDto.CodigoRespuesta;
-
+                    if (call.isExecuted()) {
                         if (personaResponseDto.CodigoRespuesta.equals(Integer.toString(Constantes.CODIGO_EXITOSO))) {
+                            response.body().toString();
                             Toast.makeText(Login.this, "BIENVENIDO", Toast.LENGTH_SHORT).show();
                             idProgresBarLogin.setVisibility(View.GONE);
 
                             guardarSharedPreferences(personaResponseDto.Id.toString());
-                            guardarSharedPreferences2(personaResponseDto.PrimerNombre);
+                            //guardarSharedPreferences2(personaResponseDto.PrimerNombre.toString());
+                            guardarSharedPreferencesRol(personaResponseDto.IdRol);
 
                             Intent i = new Intent(Login.this, MainMenuActivity.class);
                             i.putExtra("Primera", "Si");
                             startActivity(i);
                             finish();
-                        }
-                        else  {
-                            Toast.makeText(Login.this, " "+personaResponseDto.MensajeRespuesta, Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(Login.this, " " + personaResponseDto.MensajeRespuesta, Toast.LENGTH_SHORT).show();
                             idProgresBarLogin.setVisibility(View.GONE);
                         }
-
+                    }
                 }
 
                 @Override
                 public void onFailure(Call<PersonaResponseDto> call, Throwable t) {
-                    Toast.makeText(Login.this, Constantes.ERROR_RETROFIT, Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(Login.this, Constantes.ERROR_RETROFIT, Toast.LENGTH_SHORT).show();
                     idProgresBarLogin.setVisibility(View.GONE);
                 }
             });
@@ -192,6 +193,12 @@ public class Login extends AppCompatActivity {
     private void guardarSharedPreferences2(String nombre) {
         SharedPreferences.Editor editor = getSharedPreferences("MY_PREFS_EXCELSIOR2", MODE_PRIVATE).edit();
         editor.putString("Nombre", nombre);
+        editor.apply();
+    }
+
+    private void guardarSharedPreferencesRol(String rol) {
+        SharedPreferences.Editor editor = getSharedPreferences("Rol", MODE_PRIVATE).edit();
+        editor.putString("RolUsuario", rol);
         editor.apply();
     }
 }

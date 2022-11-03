@@ -17,8 +17,11 @@ import ammovil.com.excelsior.data.response.CuentaTronResponseDto;
 import ammovil.com.excelsior.data.response.InversionResponseDto;
 import ammovil.com.excelsior.data.response.PersonaDto;
 import ammovil.com.excelsior.data.response.PersonaResponseDto;
+import ammovil.com.excelsior.data.response.ReponseMothersDto;
 import ammovil.com.excelsior.data.response.TiposMembresiaResponseDto;
+import ammovil.com.excelsior.data.response.BalanceSaldosResponseDto;
 import retrofit2.Call;
+import retrofit2.Callback;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
@@ -56,5 +59,11 @@ public interface Apiervice {
 
     @GET("/api/Persona/GenerarCodigoVerificacion")
     Call<CodigoGeneradoResponse> GenerarCodigoVerificacion();
+
+    @GET("/api/CuentaTron/ObtenerBalanceMadre")
+    Call<BalanceSaldosResponseDto> ObtenerBalanceMadre();
+
+    @GET("/api/CuentaTron/EnviarBalanceAMadre")
+    Call<ReponseMothersDto> EnviarBalanceAMadre();
 
 }

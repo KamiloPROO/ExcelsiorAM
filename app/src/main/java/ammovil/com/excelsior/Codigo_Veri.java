@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import java.util.concurrent.ExecutionException;
@@ -30,18 +31,21 @@ public class Codigo_Veri extends AppCompatActivity {
     private Button idBtnVerificar;
     private ConsultaUsuarioRequestDto consultaUsuarioRequestDto;
     private String idPersonaRecuperada = "0.0";
+    private String login = "";
     private String codigo = "";
     private String uno = "";
     private String dos = "";
     private String tres = "";
     private String cuatro = "";
+    private LinearLayout progressBar;
+
 
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityCodigoVeriBinding.inflate(getLayoutInflater());
-
+        progressBar = binding.idProgresBarVerificarCodigo;
         setContentView(binding.getRoot());
         referenciaCamposFomulario();
         uno = binding.idUno.getText().toString();
@@ -51,7 +55,8 @@ public class Codigo_Veri extends AppCompatActivity {
 
 
         idPersonaRecuperada = getIntent().getExtras().getString("IdPersonaVerificar");
-
+        login = getIntent().getExtras().getString("Login");
+        Toast.makeText(this, " " + login, Toast.LENGTH_SHORT).show();
         idBtnVerificar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,10 +65,7 @@ public class Codigo_Veri extends AppCompatActivity {
                             + txtSegundoNumero.getText().toString()
                             + txtTercerNumero.getText().toString()
                             + txtCuartoNumero.getText().toString();
-
-                    Toast.makeText(Codigo_Veri.this, codigo +" id " + idPersonaRecuperada, Toast.LENGTH_SHORT).show();
-
-                    llamarRetrofit(Double.valueOf(idPersonaRecuperada), codigo);
+                    llamarRetrofit(Double.valueOf(idPersonaRecuperada), codigo, login);
                 }
             }
         });
@@ -99,13 +101,15 @@ public class Codigo_Veri extends AppCompatActivity {
     /**
      * Llamado consumo de api service
      */
-    private void llamarRetrofit(Double idPersona, String codigoVerifacion) {
+    private void llamarRetrofit(Double idPersona, String codigoVerifacion, String login) {
+
         consultaUsuarioRequestDto = new ConsultaUsuarioRequestDto();
         consultaUsuarioRequestDto.IdProyecto = Constantes.ID_PROYECTO;
         consultaUsuarioRequestDto.IdPersona = idPersona;
+        consultaUsuarioRequestDto.Login = login;
         consultaUsuarioRequestDto.CodigoVerificacion = codigoVerifacion;
 
-
+        progressBar.setVisibility(View.VISIBLE);
         Apiervice apiervice = RetrofitHelper.retrofilBuild(Constantes.BASE_URL_PERSONAS).create(Apiervice.class);
         Call<Boolean> call = apiervice.VerificarCodigo(consultaUsuarioRequestDto);
         call.enqueue(new Callback<Boolean>() {
@@ -113,16 +117,20 @@ public class Codigo_Veri extends AppCompatActivity {
             public void onResponse(Call<Boolean> call, Response<Boolean> response) {
                 Boolean responseInter = response.body();
                 Log.e("RESPINSECODIGO", responseInter.toString());
+                progressBar.setVisibility(View.GONE);
                 if (responseInter) {
                     irHomeActivity();
+                    progressBar.setVisibility(View.GONE);
                 } else {
                     Toast.makeText(Codigo_Veri.this, "Código de verficación no valido", Toast.LENGTH_SHORT).show();
+                    progressBar.setVisibility(View.GONE);
                 }
             }
 
             @Override
             public void onFailure(Call<Boolean> call, Throwable t) {
                 Toast.makeText(Codigo_Veri.this, "Error retrofit Codigo", Toast.LENGTH_SHORT).show();
+                progressBar.setVisibility(View.GONE);
             }
         });
     }

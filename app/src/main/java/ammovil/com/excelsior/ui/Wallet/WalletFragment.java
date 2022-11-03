@@ -53,7 +53,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class WalletFragment extends Fragment {
     private FragmentWalletBinding binding;
-    private CrearCuentaTronResponseDto cuentaTronResponseDto;
+    private CuentaTronResponseDto cuentaTronResponseDto;
     private CrearCuentaTronRequest crearCuentaTronRequest;
     private ConsultaCuentasTronDto consultaCuentasTronDto;
     private LinearLayout progressBar;
@@ -73,9 +73,12 @@ public class WalletFragment extends Fragment {
         progressBar = binding.idProgresVarCuentasTron;
         cardView = binding.itemCardCuenta;
 
-        idPersona = Double.valueOf(Constantes.ID_PERSONA);
-
-        listarCuentasTron(idPersona);
+        idPersona = Double.valueOf(recuperarSharedPreferences());
+        try {
+            listarCuentasTron(idPersona);
+        }catch (Exception e){
+            Toast.makeText(requireContext(), "Errrr"+e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
 
         binding.idBtnCrearCuentaTron.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,39 +86,62 @@ public class WalletFragment extends Fragment {
                 crearCuentaTron();
             }
         });
+
+        binding.btnCopiarDireccion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String text = binding.idTxtReferencia.getText().toString();
+                ClipboardManager clipboard = (ClipboardManager) requireContext().getSystemService(CLIPBOARD_SERVICE);
+                ClipData clip = ClipData.newPlainText("DireccionWallet", text);
+                clipboard.setPrimaryClip(clip);
+                Toast.makeText(requireContext(), "Dirección Copiada", Toast.LENGTH_SHORT).show();
+            }
+        });
         return binding.getRoot();
 
     }
 
 
-    private void listarCuentasTron(Double idPersona) {
+    private void listarCuentasTron(Double idPersonaGet) {
         try {
             consultaCuentasTronDto = new ConsultaCuentasTronDto();
-            consultaCuentasTronDto.IdPersona = idPersona;
+            consultaCuentasTronDto.IdPersona = idPersonaGet;
+
             Apiervice apiervice = RetrofitHelper.retrofilBuild(Constantes.BASE_URL_EXCELSIOR).create(Apiervice.class);
             Call<CuentaTronResponseDto> call = apiervice.ListarCuentasTron(consultaCuentasTronDto);
             call.enqueue(new Callback<CuentaTronResponseDto>() {
                 @Override
                 public void onResponse(Call<CuentaTronResponseDto> call, Response<CuentaTronResponseDto> response) {
-                    final CuentaTronResponseDto listaCuentas = response.body();
+                    cuentaTronResponseDto = response.body();
+                    //final CuentaTronResponseDto listaCuentas = response.body();
+                    if (call.isExecuted()) {
+                        progressBar.setVisibility(View.GONE);
+                        Toast.makeText(requireContext(), cuentaTronResponseDto.Referencia, Toast.LENGTH_SHORT).show();
+                       /* if (response.body().IdUsuario != null) {
+                            ponerDatosCuentaTron(listaCuentas);
+                            binding.idBtnCrearCuentaTron.setVisibility(View.GONE);
+                            cardView.setVisibility(View.VISIBLE);
 
-                    progressBar.setVisibility(View.GONE);
-                    if (response.body() != null) {
-                        ponerDatosCuentaTron(listaCuentas);
-                        binding.idBtnCrearCuentaTron.setVisibility(View.GONE);
-                        cardView.setVisibility(View.VISIBLE);
-                        binding.idTxtNombrePropietario.setText(NOMBRE);
+                            response.body().toString();
+                            consultarPersonaPorId(idPersona);
+
+                        } else {
+                            response.body().toString();
+                            progressBar.setVisibility(View.GONE);
+                            binding.idBtnCrearCuentaTron.setVisibility(View.VISIBLE);
+                        }*/
                     }
                 }
-
                 @Override
                 public void onFailure(Call<CuentaTronResponseDto> call, Throwable t) {
                     Log.e("Errrr", t.toString());
                     Toast.makeText(requireContext(), Constantes.ERROR_RETROFIT, Toast.LENGTH_SHORT).show();
+                    progressBar.setVisibility(View.GONE);
                 }
             });
         } catch (Exception e) {
             //Toast.makeText(requireContext(), Constantes.ERROR_RETROFIT, Toast.LENGTH_SHORT).show();
+            progressBar.setVisibility(View.GONE);
         }
     }
 
@@ -129,10 +155,11 @@ public class WalletFragment extends Fragment {
             @Override
             public void onResponse(Call<PersonaDto> call, Response<PersonaDto> response) {
                 personaDto = response.body();
-                binding.idTxtNombrePropietario.setText(personaDto.PRIMER_NOMBRE);
-                Log.e("ddd", "sdf");
+                if (call.isExecuted()){
+                    binding.idTxtNombrePropietario.setText(personaDto.PRIMER_NOMBRE);
+                    response.body().toString();
+                }
             }
-
             @Override
             public void onFailure(Call<PersonaDto> call, Throwable t) {
 
@@ -141,6 +168,7 @@ public class WalletFragment extends Fragment {
     }
 
     private void crearCuentaTron() {
+        progressBar.setVisibility(View.VISIBLE);
         crearCuentaTronRequest = new CrearCuentaTronRequest();
         crearCuentaTronRequest.IdPersona = Double.valueOf(Constantes.ID_PERSONA);
 
@@ -150,24 +178,33 @@ public class WalletFragment extends Fragment {
             @Override
             public void onResponse(Call<CrearCuentaTronResponseDto> call, Response<CrearCuentaTronResponseDto> response) {
                 binding.idBtnCrearCuentaTron.setVisibility(View.GONE);
-                //listarCuentasTron();
+                listarCuentasTron(idPersona);
+                progressBar.setVisibility(View.GONE);
             }
 
             @Override
             public void onFailure(Call<CrearCuentaTronResponseDto> call, Throwable t) {
                 //binding.idBtnCrearCuentaTron.setVisibility(View.GONE);
+                progressBar.setVisibility(View.GONE);
             }
         });
-
     }
 
     @SuppressLint("SetTextI18n")
     private void ponerDatosCuentaTron(CuentaTronResponseDto cuentaTronResponseDto) {
-        binding.idTxtReferencia.setText(cuentaTronResponseDto.Referencia);
-        binding.idTxtSaldoUSDT.setText(cuentaTronResponseDto.SaldoUSDT.toString());
-        binding.idTxtSaldoTRX.setText(cuentaTronResponseDto.SaldoTRX.toString());
-        binding.txtFechaCreacion.setText(cuentaTronResponseDto.FechaCreacion);
-        binding.txtFechaActualizacion.setText(cuentaTronResponseDto.FechaActulizacion);
+        try {
+            binding.idTxtReferencia.setText(cuentaTronResponseDto.Referencia);
+            long saldoTrxConvert = (long) (cuentaTronResponseDto.SaldoTRX / Math.pow(10, 6));
+            long saldoUSDTConvert = (long) (cuentaTronResponseDto.SaldoUSDT / Math.pow(10, 6));
+            binding.idTxtSaldoUSDT.setText(String.valueOf(saldoUSDTConvert));
+            binding.idTxtSaldoTRX.setText(String.valueOf(saldoTrxConvert));
+
+            binding.txtFechaCreacion.setText(cuentaTronResponseDto.FechaCreacion);
+            binding.txtFechaActualizacion.setText(cuentaTronResponseDto.FechaActulizacion);
+        } catch (Exception e) {
+            //
+        }
+
     }
 
     @Override
@@ -175,5 +212,16 @@ public class WalletFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
+    private String recuperarSharedPreferences() {
+        SharedPreferences prefs = requireContext().getSharedPreferences("MY_PREFS_EXCELSIOR", MODE_PRIVATE);
+        String id = prefs.getString("idPersona", "vacio");
 
+        if (id == null || id.equals("vacio")) {
+            Constantes.ID_PERSONA = "0.0";
+        } else {
+            Constantes.ID_PERSONA = id;
+        }
+
+        return id;
+    }
 }

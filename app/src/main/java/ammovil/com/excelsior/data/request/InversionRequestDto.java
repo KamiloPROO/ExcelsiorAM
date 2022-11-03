@@ -1,9 +1,9 @@
 package ammovil.com.excelsior.data.request;
 
 public class InversionRequestDto {
-    public Double planid;
+    public int planid;
     public Double IdPersona;
-    public String totalvalue;
+    public int totalvalue;
     public String address;
     public String pk;
 }

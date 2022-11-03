@@ -20,11 +20,15 @@ public class Splash extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         String idPersana;
+        String idRolUsuario;
+        String Propietario;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spash);
 
         idPersana = recuperarSharedPreferences();
-        recuperarSharedPreferences2();
+        Propietario = recuperarSharedPreferences2();
+        idRolUsuario = recuperarSharedPreferencesRolUsuario();
+
         TimerTask splash = new TimerTask() {
             @Override
             public void run() {
@@ -75,4 +79,18 @@ public class Splash extends AppCompatActivity {
 
         return nombre;
     }
+
+    private String recuperarSharedPreferencesRolUsuario() {
+        SharedPreferences prefs2 = getSharedPreferences("Rol", MODE_PRIVATE);
+        String rol = prefs2.getString("RolUsuario", "vacio");
+
+        if (rol == null || rol.equals("vacio")) {
+            Constantes.NOMBRE = "vacio";
+        } else {
+            Constantes.NOMBRE = rol;
+        }
+
+        return rol;
+    }
+
 }

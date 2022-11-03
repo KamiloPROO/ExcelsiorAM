@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -35,6 +36,7 @@ public class ActivarPlan1 extends AppCompatActivity {
     private ConsultaCuentasTronDto consultaCuentasTronDto;
     private TiposMembresiaResponseDto tiposMembresiaResponseDto;
     private Double idPlan;
+    private int idPlanCompra;
     private InversionRequestDto inversionRequestDto;
     private InversionResponseDto inversionResponseDto;
     private String cantidadInvertir, numeroTelefono, codigoRespuesta;
@@ -49,12 +51,21 @@ public class ActivarPlan1 extends AppCompatActivity {
         progressBar = binding.idProgresbarActivarPlan;
 
         idPlan = Double.valueOf(recuperarExtras());
+        Double newData = new Double(idPlan);
+        int value = newData.intValue();
+
+        idPlanCompra = value;
+
         cantidadInvertir = binding.idTxtMontoAOperar.getText().toString();
         llamarRetrofit(idPlan);
         binding.idBtnComprarPlan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                guardarCompraPlan(idPlan, cantidadInvertir);
+                if (!binding.idTxtMontoAOperar.getText().toString().isEmpty()) {
+                    guardarCompraPlan(idPlanCompra, Integer.parseInt(binding.idTxtMontoAOperar.getText().toString()));
+                } else {
+                    binding.idTxtMontoAOperar.setError(Constantes.ERROR_FORMULARIO_VACIO);
+                }
             }
         });
 
@@ -77,7 +88,7 @@ public class ActivarPlan1 extends AppCompatActivity {
         return idPlan;
     }
 
-    private void guardarCompraPlan(Double idPlan, String cant_invertir) {
+    private void guardarCompraPlan(int idPlan, int cant_invertir) {
         progressBar.setVisibility(View.VISIBLE);
         inversionRequestDto = new InversionRequestDto();
         inversionRequestDto.IdPersona = Double.valueOf(Constantes.ID_PERSONA);
@@ -91,7 +102,9 @@ public class ActivarPlan1 extends AppCompatActivity {
             public void onResponse(Call<InversionResponseDto> call, Response<InversionResponseDto> response) {
                 progressBar.setVisibility(View.GONE);
                 inversionResponseDto = response.body();
-                Toast.makeText(ActivarPlan1.this, inversionResponseDto.IdPersona.toString(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(ActivarPlan1.this, "Plan Comprado con exito", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(ActivarPlan1.this, MainMenuActivity.class);
+                startActivity(i);
             }
 
             @Override

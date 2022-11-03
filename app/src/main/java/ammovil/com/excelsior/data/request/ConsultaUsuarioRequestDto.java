@@ -4,4 +4,5 @@ public class ConsultaUsuarioRequestDto {
     public Double IdPersona;
     public Double IdProyecto;
     public String CodigoVerificacion;
+    public String Login;
 }
