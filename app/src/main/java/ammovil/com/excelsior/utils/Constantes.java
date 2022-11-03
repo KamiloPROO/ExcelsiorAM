@@ -9,6 +9,11 @@ public class Constantes {
     public static final String ERROR_RETROFIT = "Ha ocurrido un error con retrofit";
     public static final String BASE_URL_PERSONAS = "http://52.175.225.67:8082/";
     public static final String BASE_URL_EXCELSIOR = "http://52.175.225.67:8085/";//cambiar por puerto nuevo
+    public static String NOMBRE = "";
+
+    public static Boolean ESTADO_PETICION = true;
+
     public static final int CODIGO_EXITOSO = 200;
+    public static String ID_PERSONA = "0";
     public static final int CODIGO_ERROR = 500;
 }

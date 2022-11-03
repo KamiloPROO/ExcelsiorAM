@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">excelsior</string>
+    <string name="app_name">Excelsior</string>
     <string name="user">Please enter your username</string>
     <string name="password">Please enter your password</string>
     <string name="btnLogin">Login</string>
@@ -34,5 +34,15 @@
     <string name="link">Refereal Link: https://www.excelsior.com/steven</string>
     <string name="marque1">Mexico | Colombia | EEUU | España | Alemania | Rusia | Paris | Inglaterra | Brazil | Canada | Las Vegas</string>
     <string name="marque2">Las Vegas | Canada | Brazil | Inglaterra | Paris | Rusia | Alemania | España | EEUU | Colombia | Mexico</string>
+    <string name="crear_cuenta">Crear cuenta</string>
+    <string name="fecha_creaci_n">Fecha creación</string>
+    <string name="fecha_actualizaci_n">Fecha Actualización</string>
+    <string name="creado">Creado</string>
+    <string name="actualizado">Actualizado</string>
+    <string name="excelsior">EXCELSIOR</string>
+    <string name="investor_s_plan">INVESTOR\'S PLAN</string>
+    <string name="freshman_investor">FRESHMAN INVESTOR</string>
+    <string name="fee">FEE</string>
+    <string name="enviar_c_digo">Enviar código</string>
 
 </resources>

@@ -1,13 +1,13 @@
 package ammovil.com.excelsior.data.response;
 
 public class TiposMembresiaResponseDto {
-    public Double Id;
-    public String Descripcion;
-    public Double Fee;
-    public Double Rendimiento;
-    public Double RangoInicial;
-    public Double RangoFinal;
-    public Double IdEstado;
+    public Double Id = 0.0;
+    public String Descripcion = "";
+    public Double Fee = 0.0;
+    public Double Rendimiento = 0.0;
+    public Double RangoInicial = 0.0;
+    public Double RangoFinal = 0.0;
+    public Double IdEstado = 0.0;
 
 
     public TiposMembresiaResponseDto() {
@@ -78,5 +78,18 @@ public class TiposMembresiaResponseDto {
 
     public void setIdEstado(Double idEstado) {
         IdEstado = idEstado;
+    }
+
+    @Override
+    public String toString() {
+        return "TiposMembresiaResponseDto{" +
+                "Id=" + Id +
+                ", Descripcion='" + Descripcion + '\'' +
+                ", Fee=" + Fee +
+                ", Rendimiento=" + Rendimiento +
+                ", RangoInicial=" + RangoInicial +
+                ", RangoFinal=" + RangoFinal +
+                ", IdEstado=" + IdEstado +
+                '}';
     }
 }

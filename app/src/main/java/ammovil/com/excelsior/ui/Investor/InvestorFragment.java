@@ -1,11 +1,14 @@
 package ammovil.com.excelsior.ui.Investor;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -15,9 +18,11 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.sql.Array;
 import java.util.ArrayList;
 import java.util.List;
 
+import ammovil.com.excelsior.ActivarPlan1;
 import ammovil.com.excelsior.Model.ModelTeam;
 import ammovil.com.excelsior.R;
 import ammovil.com.excelsior.RecyclerViewAdaptador;
@@ -40,99 +45,61 @@ public class InvestorFragment extends Fragment {
     private AdapterInvestor adapterInvestor;
     private List<TiposMembresiaResponseDto> list;
     private FragmentInvestorBinding binding;
-
+    private ProgressBar progressBar;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
         binding = FragmentInvestorBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-        //View view = inflater.inflate(R.layout.fragment_investor, container, false);
-        //llamarRetrofit(root);
-        Apiervice service = RetrofitHelper.retrofilBuild(Constantes.BASE_URL_EXCELSIOR).create(Apiervice.class);
-        Call<List<TiposMembresiaResponseDto>> call = service.ListarTiposMembresia();
+        progressBar = binding.idProgresbarInvestor;
 
-        call.enqueue(new Callback<List<TiposMembresiaResponseDto>>() {
-            @Override
-            public void onResponse(Call<List<TiposMembresiaResponseDto>> call, Response<List<TiposMembresiaResponseDto>> response) {
-                //final List<TiposMembresiaResponseDto> listaMembresias = response.body();
-                list = response.body();
+        llamarRetrofit(root);
 
-                //Log.e("LISTAAAAA", list.toString());
-                try {
-                    if (!list.isEmpty()) {
-
-                        recyclerView = root.findViewById(R.id.rcInvestor);
-                        recyclerView.setHasFixedSize(true);
-                        lManager = new LinearLayoutManager(requireContext());
-
-                        recyclerView.setLayoutManager(new LinearLayoutManager(root.getContext()));
-                        recyclerView.setLayoutManager(lManager);
-                        adapterInvestor = new AdapterInvestor(list);
-
-                        recyclerView.setAdapter(adapterInvestor);
-                    }
-                } catch (Exception e) {
-
-                }
-
-
-            }
-
-            @Override
-            public void onFailure(Call<List<TiposMembresiaResponseDto>> call, Throwable t) {
-                Toast.makeText(requireContext(), Constantes.ERROR_RETROFIT, Toast.LENGTH_SHORT).show();
-            }
-        });
         return root;
 
     }
 
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        llamarRetrofit(view);
-
-    }
-    /*  public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        FragmentInvestorBinding binding = FragmentInvestorBinding.inflate(inflater, container, false);
-        // View view = inflater.inflate(R.layout.fragment_investor, container, false);
-
-        llamarRetrofit(binding.getRoot());
-        return binding.getRoot();
-    }
-*/
-
-
     private void llamarRetrofit(View view) {
+        progressBar.setVisibility(View.VISIBLE);
         Apiervice service = RetrofitHelper.retrofilBuild(Constantes.BASE_URL_EXCELSIOR).create(Apiervice.class);
         Call<List<TiposMembresiaResponseDto>> call = service.ListarTiposMembresia();
 
         call.enqueue(new Callback<List<TiposMembresiaResponseDto>>() {
             @Override
             public void onResponse(Call<List<TiposMembresiaResponseDto>> call, Response<List<TiposMembresiaResponseDto>> response) {
-                //final List<TiposMembresiaResponseDto> listaMembresias = response.body();
-                list = response.body();
-
-                //Log.e("LISTAAAAA", list.toString());
-                try {
-                    if (!list.isEmpty()) {
-
-                        recyclerView = view.findViewById(R.id.rcInvestor);
-                        recyclerView.setHasFixedSize(true);
-                        lManager = new LinearLayoutManager(requireContext());
-
-                        recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
-                        recyclerView.setLayoutManager(lManager);
-                        adapterInvestor = new AdapterInvestor(list);
-
-                        recyclerView.setAdapter(adapterInvestor);
-                    }
-                } catch (Exception e) {
-
+                final List<TiposMembresiaResponseDto> listaMembresias = response.body();
+                //list = response.body();
+                progressBar.setVisibility(View.GONE);
+                if (response.body() != null) {
+                    Log.e("LISTAAAA", response.body().toString());
+                } else {
+                    Toast.makeText(requireContext(), "Esat vacio", Toast.LENGTH_SHORT).show();
                 }
 
+
+                recyclerView = view.findViewById(R.id.rcInvestor);
+                recyclerView.setHasFixedSize(true);
+                lManager = new LinearLayoutManager(requireContext());
+
+                recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
+                recyclerView.setLayoutManager(lManager);
+                adapterInvestor = new AdapterInvestor(listaMembresias, requireContext());
+
+                recyclerView.setAdapter(adapterInvestor);
+                adapterInvestor.setClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        adapterInvestor.setClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Intent i = new Intent(requireContext(), ActivarPlan1.class);
+                                i.putExtra("idPlan", listaMembresias.get(recyclerView.getChildAdapterPosition(v)).getId().toString());
+                                startActivity(i);
+                            }
+                        });
+                    }
+                });
 
             }
 

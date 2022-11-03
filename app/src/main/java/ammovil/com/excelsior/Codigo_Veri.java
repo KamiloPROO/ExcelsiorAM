@@ -16,6 +16,7 @@ import java.util.concurrent.ExecutionException;
 import ammovil.com.excelsior.data.PersonaModelDto;
 import ammovil.com.excelsior.data.request.ConsultaUsuarioRequestDto;
 import ammovil.com.excelsior.data.request.ResponseDto;
+import ammovil.com.excelsior.databinding.ActivityCodigoVeriBinding;
 import ammovil.com.excelsior.network.RetrofitHelper;
 import ammovil.com.excelsior.network.services.Apiervice;
 import ammovil.com.excelsior.utils.Constantes;
@@ -24,30 +25,50 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class Codigo_Veri extends AppCompatActivity {
-
+    ActivityCodigoVeriBinding binding;
     private EditText txtPrimerNumero, txtSegundoNumero, txtTercerNumero, txtCuartoNumero;
     private Button idBtnVerificar;
     private ConsultaUsuarioRequestDto consultaUsuarioRequestDto;
-    private Double idPersonaRecuperada = 0.0;
+    private String idPersonaRecuperada = "0.0";
+    private String codigo = "";
+    private String uno = "";
+    private String dos = "";
+    private String tres = "";
+    private String cuatro = "";
 
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_codigo_veri);
-        referenciaCamposFomulario();
+        binding = ActivityCodigoVeriBinding.inflate(getLayoutInflater());
 
+        setContentView(binding.getRoot());
+        referenciaCamposFomulario();
+        uno = binding.idUno.getText().toString();
+        dos = binding.editText.getText().toString();
+        tres = binding.editText2.getText().toString();
+        cuatro = binding.editText3.getText().toString();
+
+
+        idPersonaRecuperada = getIntent().getExtras().getString("IdPersonaVerificar");
 
         idBtnVerificar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (validarCamposFormulario()) {
-                    idPersonaRecuperada = recuperarExtrasIdPersona();
-                    llamarRetrofit(77.0, "1310");
+                    codigo = txtPrimerNumero.getText().toString()
+                            + txtSegundoNumero.getText().toString()
+                            + txtTercerNumero.getText().toString()
+                            + txtCuartoNumero.getText().toString();
+
+                    Toast.makeText(Codigo_Veri.this, codigo +" id " + idPersonaRecuperada, Toast.LENGTH_SHORT).show();
+
+                    llamarRetrofit(Double.valueOf(idPersonaRecuperada), codigo);
                 }
             }
         });
     }
+
 
     /**
      * Recuperamos el IdPerosna que nos llega del registro
@@ -165,7 +186,7 @@ public class Codigo_Veri extends AppCompatActivity {
 
     private void irHomeActivity() {
         try {
-            Intent i = new Intent(Codigo_Veri.this, MainMenuActivity.class);
+            Intent i = new Intent(Codigo_Veri.this, Login.class);
             startActivity(i);
             finish();
         } catch (Exception e) {

@@ -34,7 +34,6 @@ public class Singup extends AppCompatActivity {
         setContentView(R.layout.activity_singup);
         referenciaDatosFormulario();
 
-
         login = findViewById(R.id.txtLoginC);
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,7 +84,7 @@ public class Singup extends AppCompatActivity {
                 responseDto = response.body();
                 Log.e("RESPONSER ", responseDto.Codigo + " mensaje " + responseDto.Mensaje);
                 if (responseDto.Codigo == Constantes.CODIGO_EXITOSO) {
-                    IrVerificacionCodigo(responseDto.IdPersona);
+                    IrVerificacionCodigo(String.valueOf(responseDto.IdPersona));
                     Toast.makeText(Singup.this, responseDto.Mensaje, Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(Singup.this, responseDto.Mensaje, Toast.LENGTH_SHORT).show();
@@ -140,7 +139,7 @@ public class Singup extends AppCompatActivity {
         return esValido;
     }
 
-    private void IrVerificacionCodigo(double idPersona) {
+    private void IrVerificacionCodigo(String idPersona) {
         Intent i = new Intent(Singup.this, Codigo_Veri.class);
         i.putExtra("IdPersonaVerificar", idPersona);
         startActivity(i);

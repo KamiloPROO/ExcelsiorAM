@@ -2,6 +2,7 @@ package ammovil.com.excelsior;
 
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.net.wifi.hotspot2.pps.HomeSp;
 import android.os.Bundle;
 import android.util.Log;
@@ -87,7 +88,7 @@ public class Login extends AppCompatActivity {
         try {
             iniciaSesionRequestDto = new IniciaSesionRequestDto();
             iniciaSesionRequestDto.IdProyecto = Constantes.ID_PROYECTO;
-            iniciaSesionRequestDto.IdPersona = 81.0;
+            iniciaSesionRequestDto.IdPersona = 0.0;
             iniciaSesionRequestDto.Login = login;
             iniciaSesionRequestDto.Password = password;
 
@@ -104,7 +105,12 @@ public class Login extends AppCompatActivity {
                     if (personaResponseDto != null) {
                         if (personaResponseDto.CodigoRespuesta.equals(Integer.toString(Constantes.CODIGO_EXITOSO))) {
                             Toast.makeText(Login.this, personaResponseDto.MensajeRespuesta, Toast.LENGTH_SHORT).show();
+
+                            guardarSharedPreferences(personaResponseDto.Id.toString());
+                            guardarSharedPreferences2(personaResponseDto.PrimerNombre);
+
                             Intent i = new Intent(Login.this, MainMenuActivity.class);
+                            i.putExtra("Primera", "Si");
                             startActivity(i);
                             finish();
                         }else{
@@ -168,5 +174,17 @@ public class Login extends AppCompatActivity {
             Toast.makeText(this, Constantes.ERROR_VALIDANDO_FORMULARIO, Toast.LENGTH_SHORT).show();
         }
         return esValido;
+    }
+
+    private void guardarSharedPreferences(String id){
+        SharedPreferences.Editor editor = getSharedPreferences("MY_PREFS_EXCELSIOR", MODE_PRIVATE).edit();
+        editor.putString("idPersona", id);
+        editor.apply();
+    }
+
+    private void guardarSharedPreferences2(String nombre){
+        SharedPreferences.Editor editor = getSharedPreferences("MY_PREFS_EXCELSIOR2", MODE_PRIVATE).edit();
+        editor.putString("Nombre", nombre);
+        editor.apply();
     }
 }

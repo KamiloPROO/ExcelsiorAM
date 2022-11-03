@@ -1,6 +1,7 @@
 package ammovil.com.excelsior.data.response;
 
 public class PersonaResponseDto {
+    public Double Id;
     public String PrimerNombre;
     public String SegundoNombre;
     public String PrimerApellidos;

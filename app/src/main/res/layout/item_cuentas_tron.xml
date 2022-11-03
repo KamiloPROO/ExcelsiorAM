@@ -1,26 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/idItemCuentasTron"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/black"
-    tools:context=".ui.Wallet.WalletFragment">
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/idRecyclerViewMisCuentas"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </androidx.recyclerview.widget.RecyclerView>
-
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/itemCardCuenta"
+        android:id="@+id/itemFocus"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/m_10dp"
@@ -28,10 +16,7 @@
         android:layout_marginEnd="@dimen/m_10dp"
         android:clickable="true"
         android:focusable="true"
-        app:cardCornerRadius="@dimen/m_15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:cardCornerRadius="@dimen/m_15dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -324,30 +309,4 @@
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
-
-
-    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:id="@+id/idBtnCrearCuentaTron"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="20dp"
-        android:backgroundTint="@color/plan1"
-        android:text="@string/crear_cuenta"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ProgressBar
-        android:id="@+id/idProgresVarCuentasTron"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

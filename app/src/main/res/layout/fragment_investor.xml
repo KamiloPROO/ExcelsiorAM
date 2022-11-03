@@ -18,8 +18,7 @@
         android:text="I N V E S T O R'S   P L A N"
         android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="20sp"
-        />
+        android:textSize="20sp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcInvestor"
@@ -33,4 +32,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logoExs"
         app:layout_constraintVertical_bias="0.58" />
+
+    <ProgressBar
+        android:visibility="gone"
+        android:layout_gravity="center"
+        android:id="@+id/idProgresbarInvestor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 </LinearLayout>
