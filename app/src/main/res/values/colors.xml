@@ -9,6 +9,7 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="typography">#63318a</color>
+    <color name="transparend">#0063318A</color>
     <color name="cards">#751ec1</color>
     <color name="cardsWhite">#FFFFFF</color>
     <color name="verdegod">#1BBD30</color>

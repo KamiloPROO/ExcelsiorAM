@@ -5,4 +5,5 @@ public class InversionResponseDto {
     public Double IdPlan;
     public Double IdPersona;
     public String Cant_invertir;
+    public Boolean status;
 }

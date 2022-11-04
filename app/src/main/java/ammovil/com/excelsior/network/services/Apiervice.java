@@ -1,5 +1,7 @@
 package ammovil.com.excelsior.network.services;
 
+import com.airbnb.lottie.L;
+
 import java.util.List;
 
 import ammovil.com.excelsior.data.PersonaModelDto;
@@ -15,6 +17,7 @@ import ammovil.com.excelsior.data.response.CodigoGeneradoResponse;
 import ammovil.com.excelsior.data.response.CrearCuentaTronResponseDto;
 import ammovil.com.excelsior.data.response.CuentaTronResponseDto;
 import ammovil.com.excelsior.data.response.InversionResponseDto;
+import ammovil.com.excelsior.data.response.MisInversionesResponseDto;
 import ammovil.com.excelsior.data.response.PersonaDto;
 import ammovil.com.excelsior.data.response.PersonaResponseDto;
 import ammovil.com.excelsior.data.response.ReponseMothersDto;
@@ -54,6 +57,13 @@ public interface Apiervice {
     @POST("/api/Persona/BuscarPersonaPorIdPersona")
     Call<PersonaDto> BuscarPersonaPorIdPersona(@Body ConsultaPersonaRequestDto consultaPersonaRequestDto);
 
+
+    @POST("/api/Inversiones/ListarMisInversiones")
+    Call<List<MisInversionesResponseDto>> ListarMisInversiones(@Body ConsultaCuentasTronDto consulta);
+
+    /**
+     * PETICIONES GET
+     * */
     @GET("/api/TiposMembresia/ListarTiposMembresia")
     Call<List<TiposMembresiaResponseDto>> ListarTiposMembresia();
 

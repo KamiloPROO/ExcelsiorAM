@@ -46,5 +46,10 @@
     <string name="enviar_c_digo">Enviar código</string>
     <string name="cargando">Cargando...</string>
     <string name="login">Login</string>
+    <string name="activar">Activar</string>
+    <string name="invertir">Invertir</string>
+    <string name="master_investor">Master Investor</string>
+    <string name="rafereal_link">Rafereal Link:</string>
+    <string name="copy">Copy</string>
 
 </resources>

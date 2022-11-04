@@ -5,7 +5,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -48,16 +50,42 @@ public class ActivarPlan1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityActivarPlanBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        DisplayMetrics medidas = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(medidas);
+        int ancho = medidas.widthPixels;
+        int alto = medidas.heightPixels;
+        getWindow().setLayout((int) (ancho * 0.9), (int) (alto * 0.65));
+
+
         progressBar = binding.idProgresbarActivarPlan;
 
         idPlan = Double.valueOf(recuperarExtras());
+
+        if (idPlan == 0.0) {
+            idPlan = 1.0;
+        } else if (idPlan == 1.0) {
+            idPlan = 2.0;
+        } else if (idPlan == 2.0) {
+            idPlan = 3.0;
+
+        } else if (idPlan == 3.0) {
+            idPlan = 4.0;
+
+        } else if (idPlan == 4.0) {
+            idPlan = 5.0;
+
+        } else if (idPlan == 5.0) {
+            idPlan = 6.0;
+        }
         Double newData = new Double(idPlan);
         int value = newData.intValue();
 
-        idPlanCompra = value;
+        idPlanCompra = value + 1;
+        Toast.makeText(this, "" + idPlan, Toast.LENGTH_SHORT).show();
 
         cantidadInvertir = binding.idTxtMontoAOperar.getText().toString();
-        llamarRetrofit(idPlan);
+        llamarRetrofit(idPlan + 1);
         binding.idBtnComprarPlan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,10 +103,7 @@ public class ActivarPlan1 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String numero = binding.idTxtNumeroVerificacion.getText().toString();
-
                 //GenerarCodigoVerificacion();
-
-
             }
         });
     }
@@ -125,7 +150,6 @@ public class ActivarPlan1 extends AppCompatActivity {
             public void onResponse(Call<TiposMembresiaResponseDto> call, Response<TiposMembresiaResponseDto> response) {
                 progressBar.setVisibility(View.GONE);
                 tiposMembresiaResponseDto = response.body();
-                Toast.makeText(ActivarPlan1.this, tiposMembresiaResponseDto.Descripcion, Toast.LENGTH_SHORT).show();
                 ponerDatosEnLaVista(tiposMembresiaResponseDto);
             }
 
@@ -170,8 +194,6 @@ public class ActivarPlan1 extends AppCompatActivity {
             public void onResponse(Call<CodigoGeneradoResponse> call, Response<CodigoGeneradoResponse> response) {
                 codigoGeneradoResponse.codigo = response.body().codigo;
 
-                Toast.makeText(ActivarPlan1.this, "Nulo", Toast.LENGTH_SHORT).show();
-                Toast.makeText(ActivarPlan1.this, codigoGeneradoResponse.codigo, Toast.LENGTH_SHORT).show();
                 //call.isExecuted();
 
             }

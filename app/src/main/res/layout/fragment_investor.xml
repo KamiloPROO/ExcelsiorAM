@@ -8,33 +8,63 @@
     android:orientation="vertical"
     tools:context=".ui.Investor.InvestorFragment">
 
-    <TextView
+    <LinearLayout
         android:id="@+id/text_investor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="I N V E S T O R'S   P L A N"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="20sp"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/text_32sp"
+                android:layout_height="@dimen/text_32sp"
+                android:src="@drawable/log"
+                app:tint="@color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/m_5dp"
+                android:text="EXCELSIOR"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_25sp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:paddingBottom="@dimen/m_15dp"
+            android:text="I N V E S T O R'S   P L A N"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_32sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
+
         android:id="@+id/rcInvestor"
         android:layout_width="380dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="@dimen/size_32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.626"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/text_investor"
-        app:layout_constraintVertical_bias="0.58" />
+        app:layout_constraintTop_toBottomOf="@+id/text_investor" />
 
 
     <LinearLayout

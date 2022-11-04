@@ -4,510 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/whitebackground"
-    tools:context=".ui.Dashboard.DashboarFragment">
+    android:background="@drawable/background_new">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <ImageView
-                android:id="@+id/logoExs"
-                android:layout_width="127dp"
-                android:layout_height="118dp"
-                android:background="@drawable/log"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.105"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
-
-            <TextView
-                android:id="@+id/textDashboard"
-                android:layout_width="227dp"
-                android:layout_height="36dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:text="W E L C O M E"
-                android:textAlignment="center"
-                android:textColor="@color/typography"
-                android:textSize="30sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/logoExs"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.011" />
-
-
-            <TextView
-                android:id="@+id/textFinances2"
-                android:layout_width="195dp"
-                android:layout_height="44dp"
-                android:text="@string/subTituWel"
-                android:textAlignment="center"
-                android:textColor="@color/typography"
-                android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.22"
-                app:layout_constraintStart_toEndOf="@+id/logoExs"
-                app:layout_constraintTop_toBottomOf="@+id/textDashboard"
-                app:layout_constraintVertical_bias="0.0" />
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardViewWelcome"
-                android:layout_width="370dp"
-                android:layout_height="150dp"
-                app:cardBackgroundColor="@color/cardsWhite"
-                app:cardCornerRadius="15sp"
-                app:cardElevation="20sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.609"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.210">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="370dp"
-                    android:background="@drawable/border_cards"
-                    android:layout_height="150dp">
-
-                    <TextView
-                        android:id="@+id/txtcardFinances"
-                        android:layout_width="227dp"
-                        android:layout_height="70dp"
-                        android:text="PROGRESS OF MY PLAN"
-                        android:textColor="@color/typography"
-                        android:textSize="30sp"
-                        android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.105"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.145" />
-
-                    <TextView
-                        android:id="@+id/txtcardFinances2"
-                        android:layout_width="114dp"
-                        android:layout_height="22dp"
-                        android:text="6% mensual"
-                        android:textColor="@color/typography"
-                        android:textSize="20sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.059"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/txtcardFinances"
-                        app:layout_constraintVertical_bias="0.0" />
-
-                    <TextView
-                        android:id="@+id/txtcardFinances5"
-                        android:layout_width="114dp"
-                        android:layout_height="13dp"
-                        android:text="Master Investor"
-                        android:textColor="@color/typography"
-                        android:textSize="11sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.06"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/txtcardFinances"
-                        app:layout_constraintVertical_bias="0.469" />
-
-                    <TextView
-                        android:id="@+id/txtcardFinances6"
-                        android:layout_width="114dp"
-                        android:layout_height="13dp"
-                        android:text="Current Performance"
-                        android:textColor="@color/verdegod"
-                        android:textSize="11sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toEndOf="@+id/txtcardFinances5"
-                        app:layout_constraintTop_toBottomOf="@+id/txtcardFinances"
-                        app:layout_constraintVertical_bias="0.469" />
-
-                    <TextView
-                        android:id="@+id/txtcardFinances3"
-                        android:layout_width="114dp"
-                        android:layout_height="27dp"
-                        android:text="U$45000.00"
-                        android:textColor="@color/typography"
-                        android:textSize="18sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.059"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/txtcardFinances"
-                        app:layout_constraintVertical_bias="0.888" />
-
-                    <TextView
-                        android:id="@+id/txtcardFinances4"
-                        android:layout_width="114dp"
-                        android:layout_height="27dp"
-                        android:text="U$65000.87"
-                        android:textColor="@color/typography"
-                        android:textSize="18sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toEndOf="@+id/txtcardFinances3"
-                        app:layout_constraintTop_toBottomOf="@+id/txtcardFinances"
-                        app:layout_constraintVertical_bias="0.888" />
-
-                    <RelativeLayout
-                        android:id="@+id/progress_layout"
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
-                        android:layout_margin="10dp"
-                        android:layout_marginEnd="4dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.70"
-                        app:layout_constraintStart_toEndOf="@+id/txtcardFinances"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.333">
-
-                        <ProgressBar
-                            android:id="@+id/progress_bar"
-                            style="?android:progressBarStyleHorizontal"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@drawable/circle_shape"
-                            android:indeterminate="false"
-                            android:progressDrawable="@drawable/circle_progrees_bar"
-                            />
-
-                        <TextView
-                            android:id="@+id/progress_text"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentLeft="true"
-                            android:layout_alignParentRight="true"
-                            android:layout_centerVertical="true"
-                            android:gravity="center"
-                            android:text="---"
-                            android:textColor="@color/typography"
-                            android:textSize="28sp"
-                            android:textStyle="bold"
-                            />
-
-
-                    </RelativeLayout>
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardWelcome7"
-                android:layout_width="120dp"
-                android:layout_height="110dp"
-                app:cardBackgroundColor="@color/cardsWhite"
-                app:cardCornerRadius="8sp"
-                app:cardElevation="20sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/cardFinances4"
-                app:layout_constraintHorizontal_bias="0.64"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardViewWelcome"
-                app:layout_constraintVertical_bias="0.040">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="120dp"
-                    android:layout_height="110dp"
-                    android:background="@drawable/border_cards">
-
-
-                    <TextView
-                        android:id="@+id/txtBondWel"
-                        android:layout_width="45sp"
-                        android:layout_height="17sp"
-                        android:text="BOND"
-                        android:textColor="@color/typography"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        app:layout_constraintBottom_toTopOf="@+id/txtBondWel2"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.133"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="1.0" />
-
-                    <TextView
-                        android:id="@+id/txtBondWel2"
-                        android:layout_width="100sp"
-                        android:layout_height="17sp"
-                        android:text="QUICK START"
-                        android:textColor="@color/typography"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.365" />
-
-                    <TextView
-                        android:id="@+id/txtBondWel3"
-                        android:layout_width="100sp"
-                        android:layout_height="17sp"
-                        android:text="DIRECT"
-                        android:textColor="@color/typography"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.548" />
-
-                    <ImageView
-                        android:id="@+id/imgBondWel"
-                        android:layout_width="35dp"
-                        android:layout_height="30dp"
-                        android:background="@drawable/quisk"
-                        app:layout_constraintBottom_toTopOf="@+id/txtSaldoBondWel"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.882"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.088" />
-
-                    <TextView
-                        android:id="@+id/txtSaldoBondWel"
-                        android:layout_width="100dp"
-                        android:layout_height="28dp"
-                        android:layout_marginStart="8dp"
-                        android:text="U$20500.00"
-                        android:textColor="@color/verdegod"
-                        android:textSize="18sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.914" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardFinances4"
-                android:layout_width="120dp"
-                android:layout_height="110dp"
-                app:cardBackgroundColor="@color/cardsWhite"
-                app:cardCornerRadius="8sp"
-                app:cardElevation="20sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/cardWelcome6"
-                app:layout_constraintHorizontal_bias="0.955"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardViewWelcome"
-                app:layout_constraintVertical_bias="0.040">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="120dp"
-                    android:layout_height="110dp"
-                    android:background="@drawable/border_cards">
-
-
-                    <TextView
-                        android:id="@+id/txtBondActWel"
-                        android:layout_width="45sp"
-                        android:layout_height="17sp"
-                        android:text="BOND"
-                        android:textColor="@color/typography"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        app:layout_constraintBottom_toTopOf="@+id/txtBondActWel2"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.133"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="1.0" />
-
-                    <TextView
-                        android:id="@+id/txtBondActWel2"
-                        android:layout_width="100sp"
-                        android:layout_height="17sp"
-                        android:text="ACTIVATION"
-                        android:textColor="@color/typography"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.365" />
-
-                    <TextView
-                        android:id="@+id/txtBondActWel3"
-                        android:layout_width="100sp"
-                        android:layout_height="17sp"
-                        android:text="MESUAL"
-                        android:textColor="@color/typography"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.548" />
-
-                    <ImageView
-                        android:id="@+id/imgBondActWel"
-                        android:layout_width="35dp"
-                        android:layout_height="30dp"
-                        android:background="@drawable/mensualacti"
-                        app:layout_constraintBottom_toTopOf="@+id/txtSaldoBondActWel"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.882"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.088" />
-
-                    <TextView
-                        android:id="@+id/txtSaldoBondActWel"
-                        android:layout_width="100dp"
-                        android:layout_height="28dp"
-                        android:layout_marginStart="8dp"
-                        android:text="U$1500.00"
-                        android:textColor="@color/verdegod"
-                        android:textSize="18sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.914" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardWelcome6"
-                android:layout_width="120dp"
-                android:layout_height="110dp"
-                app:cardBackgroundColor="@color/cardsWhite"
-                app:cardCornerRadius="8sp"
-                app:cardElevation="20sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.962"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardViewWelcome"
-                app:layout_constraintVertical_bias="0.040">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="120dp"
-                    android:layout_height="110dp"
-                    android:background="@drawable/border_cards">
-
-
-                    <TextView
-                        android:id="@+id/txtBondPortWel"
-                        android:layout_width="45sp"
-                        android:layout_height="17sp"
-                        android:text="BOND"
-                        android:textColor="@color/typography"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        app:layout_constraintBottom_toTopOf="@+id/txtBondPortWel2"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.106"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="1.0" />
-
-                    <TextView
-                        android:id="@+id/txtBondPortWel2"
-                        android:layout_width="110sp"
-                        android:layout_height="17sp"
-                        android:text="PORTFOLIO  1%"
-                        android:textColor="@color/typography"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.8"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.457" />
-
-                    <ImageView
-                        android:id="@+id/imgBondPortWel"
-                        android:layout_width="25dp"
-                        android:layout_height="22dp"
-                        android:background="@drawable/portafolio"
-                        app:layout_constraintBottom_toTopOf="@+id/txtSaldoBondPortWel"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.831"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.227" />
-
-                    <TextView
-                        android:id="@+id/txtSaldoBondPortWel"
-                        android:layout_width="100dp"
-                        android:layout_height="28dp"
-                        android:layout_marginStart="8dp"
-                        android:text="U$3050.00"
-                        android:textColor="@color/mozport"
-                        android:textSize="18sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.914" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="60sp"
-                app:layout_constraintBottom_toTopOf="@+id/WelcomeSlider"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardFinances4">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5sp"
-                    android:id="@+id/marquee"
-                    android:scrollHorizontally="true"
-                    android:singleLine="true"
-                    android:focusable="false"
-                    android:textColor="@color/typography"
-                    android:ellipsize="marquee"
-                    android:marqueeRepeatLimit="marquee_forever"
-                    android:text="@string/marque1" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/marquee2"
-                    android:textColor="@color/verdegod"
-                    android:layout_marginTop="30sp"
-                    android:scrollHorizontally="true"
-                    android:singleLine="true"
-                    android:focusable="false"
-                    android:ellipsize="marquee"
-                    android:marqueeRepeatLimit="marquee_forever"
-                    android:text="@string/marque2" />
-
-            </androidx.cardview.widget.CardView>
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <com.smarteist.autoimageslider.SliderView
                 android:id="@+id/WelcomeSlider"
                 android:layout_width="match_parent"
                 android:layout_height="238dp"
-                android:layout_marginBottom="4dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -526,7 +40,758 @@
                 app:sliderScrollTimeInSec="2"
                 app:sliderStartAutoCycle="true" />
 
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@+id/WelcomeSlider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardFinances4">
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:id="@+id/marquee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5sp"
+                    android:ellipsize="marquee"
+                    android:focusable="false"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:text="@string/marque1"
+                    android:textColor="@color/typography" />
+
+                <TextView
+                    android:id="@+id/marquee2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30sp"
+                    android:layout_marginBottom="@dimen/m_5dp"
+                    android:ellipsize="marquee"
+                    android:focusable="false"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:text="@string/marque2"
+                    android:textColor="@color/verdegod" />
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/m_10dp"
+                    android:layout_marginTop="@dimen/m_10dp"
+                    android:layout_weight="2"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/txtcardFinances"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="PROGRESS OF MY PLAN"
+                        android:textColor="@color/white"
+                        android:textSize="30sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtcardFinances2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="6% mensual"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/m_10dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtcardFinances5"
+                                android:layout_width="114dp"
+                                android:layout_height="13dp"
+                                android:text="@string/master_investor"
+                                android:textColor="@color/white"
+                                android:textSize="11sp" />
+
+                            <TextView
+                                android:id="@+id/txtcardFinances3"
+                                android:layout_width="114dp"
+                                android:layout_height="27dp"
+                                android:text="U$45000.00"
+                                android:textColor="@color/white"
+                                android:textSize="18sp" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="@dimen/m_5dp"
+                            android:layout_height="@dimen/m_5dp" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtcardFinances6"
+                                android:layout_width="114dp"
+                                android:layout_height="13dp"
+                                android:text="@string/master_investor"
+                                android:textColor="@color/white"
+                                android:textSize="11sp" />
+
+                            <TextView
+                                android:id="@+id/txtcardFinances4"
+                                android:layout_width="114dp"
+                                android:layout_height="27dp"
+                                android:text="U$45000.00"
+                                android:textColor="@color/white"
+                                android:textSize="18sp" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/progress_layout"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_margin="10dp"
+                    android:layout_marginEnd="4dp"
+                    android:visibility="gone">
+
+                    <ProgressBar
+                        android:id="@+id/progress_bar"
+                        style="?android:progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/circle_shape"
+                        android:indeterminate="false"
+                        android:progressDrawable="@drawable/circle_progrees_bar" />
+
+                    <TextView
+                        android:id="@+id/progress_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:text="---"
+                        android:textColor="@color/typography"
+                        android:textSize="28sp"
+                        android:textStyle="bold" />
+
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/idRecyclerViewMisInversiones"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal" />
+
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/m_5dp"
+                android:layout_marginTop="@dimen/m_10dp"
+                android:background="@null">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/m_10dp"
+                    android:layout_marginTop="@dimen/m_10dp"
+                    android:layout_marginBottom="@dimen/m_10dp"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardWelcome7"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/transparend"
+                        app:cardCornerRadius="8sp"
+                        app:cardElevation="20sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/cardFinances4"
+                        app:layout_constraintHorizontal_bias="0.64"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cardViewWelcome"
+                        app:layout_constraintVertical_bias="0.040">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/border_cards"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/m_15dp">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/txtBondWel3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="BONO INICIO RÁPIDO DIRECTO"
+                                    android:textColor="@color/white"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="0.548" />
+
+                                <TextView
+                                    android:id="@+id/txtSaldoBondWel"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/m_5dp"
+                                    android:maxLines="1"
+                                    android:text="U$20500.00"
+                                    android:textColor="@color/verdegod"
+                                    android:textSize="18sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="0.914" />
+                            </LinearLayout>
+
+
+                            <ImageView
+                                android:id="@+id/imgBondWel"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:background="@drawable/quisk"
+                                app:layout_constraintBottom_toTopOf="@+id/txtSaldoBondWel"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.882"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.088" />
+
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <View
+                        android:layout_width="@dimen/m_10dp"
+                        android:layout_height="@dimen/m_5dp" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/transparend"
+                        app:cardCornerRadius="8sp"
+                        app:cardElevation="20sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/cardFinances4"
+                        app:layout_constraintHorizontal_bias="0.64"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cardViewWelcome"
+                        app:layout_constraintVertical_bias="0.040">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/border_cards"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/m_15dp">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="BONO ACTIVACION MENSUAL"
+                                    android:textColor="@color/white"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="0.548" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/m_5dp"
+                                    android:maxLines="1"
+                                    android:text="U$20500.00"
+                                    android:textColor="@color/verdegod"
+                                    android:textSize="18sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="0.914" />
+                            </LinearLayout>
+
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:background="@drawable/mensualacti"
+                                app:layout_constraintBottom_toTopOf="@+id/txtSaldoBondWel"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.882"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.088" />
+
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <View
+                        android:layout_width="@dimen/m_10dp"
+                        android:layout_height="@dimen/m_5dp" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/transparend"
+                        app:cardCornerRadius="8sp"
+                        app:cardElevation="20sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/cardFinances4"
+                        app:layout_constraintHorizontal_bias="0.64"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cardViewWelcome"
+                        app:layout_constraintVertical_bias="0.040">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/border_cards"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/m_15dp">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="BONO PORTFOLIO  1%"
+                                    android:textColor="@color/white"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="0.548" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/m_5dp"
+                                    android:maxLines="1"
+                                    android:text="U$20500.00"
+                                    android:textColor="@color/verdegod"
+                                    android:textSize="18sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="0.914" />
+                            </LinearLayout>
+
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:background="@drawable/portafolio"
+                                app:layout_constraintBottom_toTopOf="@+id/txtSaldoBondWel"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.882"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.088" />
+
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <View
+                        android:layout_width="@dimen/m_10dp"
+                        android:layout_height="@dimen/m_5dp" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/transparend"
+                        app:cardCornerRadius="8sp"
+                        app:cardElevation="20sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/cardFinances4"
+                        app:layout_constraintHorizontal_bias="0.64"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cardViewWelcome"
+                        app:layout_constraintVertical_bias="0.040">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/border_cards"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/m_15dp">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="BONO INICIO RÁPIDO DIRECTO"
+                                    android:textColor="@color/white"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="0.548" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/m_5dp"
+                                    android:maxLines="1"
+                                    android:text="U$20500.00"
+                                    android:textColor="@color/verdegod"
+                                    android:textSize="18sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="0.914" />
+                            </LinearLayout>
+
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:background="@drawable/quisk"
+                                app:layout_constraintBottom_toTopOf="@+id/txtSaldoBondWel"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.882"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.088" />
+
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <View
+                        android:layout_width="@dimen/m_10dp"
+                        android:layout_height="@dimen/m_5dp" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/transparend"
+                        app:cardCornerRadius="8sp"
+                        app:cardElevation="20sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/cardFinances4"
+                        app:layout_constraintHorizontal_bias="0.64"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cardViewWelcome"
+                        app:layout_constraintVertical_bias="0.040">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/border_cards"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/m_15dp">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="BONO INICIO RÁPIDO DIRECTO"
+                                    android:textColor="@color/white"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="0.548" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/m_5dp"
+                                    android:maxLines="1"
+                                    android:text="U$20500.00"
+                                    android:textColor="@color/verdegod"
+                                    android:textSize="18sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="0.914" />
+                            </LinearLayout>
+
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:background="@drawable/quisk"
+                                app:layout_constraintBottom_toTopOf="@+id/txtSaldoBondWel"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.882"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.088" />
+
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <View
+                        android:layout_width="@dimen/m_10dp"
+                        android:layout_height="@dimen/m_5dp" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/transparend"
+                        app:cardCornerRadius="8sp"
+                        app:cardElevation="20sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/cardFinances4"
+                        app:layout_constraintHorizontal_bias="0.64"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cardViewWelcome"
+                        app:layout_constraintVertical_bias="0.040">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/border_cards"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/m_15dp">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="BONO INICIO RÁPIDO DIRECTO"
+                                    android:textColor="@color/white"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="0.548" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/m_5dp"
+                                    android:maxLines="1"
+                                    android:text="U$20500.00"
+                                    android:textColor="@color/verdegod"
+                                    android:textSize="18sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="0.914" />
+                            </LinearLayout>
+
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:background="@drawable/quisk"
+                                app:layout_constraintBottom_toTopOf="@+id/txtSaldoBondWel"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.882"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.088" />
+
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <View
+                        android:layout_width="@dimen/m_10dp"
+                        android:layout_height="@dimen/m_5dp" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/transparend"
+                        app:cardCornerRadius="8sp"
+                        app:cardElevation="20sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/cardFinances4"
+                        app:layout_constraintHorizontal_bias="0.64"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cardViewWelcome"
+                        app:layout_constraintVertical_bias="0.040">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/border_cards"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/m_15dp">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="BONO INICIO RÁPIDO DIRECTO"
+                                    android:textColor="@color/white"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="0.548" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/m_5dp"
+                                    android:maxLines="1"
+                                    android:text="U$20500.00"
+                                    android:textColor="@color/verdegod"
+                                    android:textSize="18sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="0.914" />
+                            </LinearLayout>
+
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:background="@drawable/quisk"
+                                app:layout_constraintBottom_toTopOf="@+id/txtSaldoBondWel"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.882"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.088" />
+
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/m_15dp"
+                android:layout_marginTop="@dimen/m_15dp"
+                android:layout_marginEnd="@dimen/m_15dp"
+                android:background="@drawable/border_cards"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/m_5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/m_5dp"
+                    android:text="@string/rafereal_link"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/m_5dp"
+                    android:text="Https://www.excelsior.com/steven"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="italic" />
+
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/m_10dp"
+                android:layout_marginBottom="@dimen/size_50dp"
+                android:backgroundTint="@color/plan1"
+                android:gravity="center"
+                android:text="@string/copy"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -39,43 +39,10 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".ActivarPlan6"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".ActivarPlan5"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".ActivarPlan4"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".ActivarPlan3"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".ActivarPlan2"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".ActivarPlan1"
-            android:exported="false">
+            android:exported="false"
+            android:theme="@style/Theme.Excelsior.pup"
+            >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

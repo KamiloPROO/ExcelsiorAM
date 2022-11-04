@@ -56,7 +56,6 @@ public class Codigo_Veri extends AppCompatActivity {
 
         idPersonaRecuperada = getIntent().getExtras().getString("IdPersonaVerificar");
         login = getIntent().getExtras().getString("Login");
-        Toast.makeText(this, " " + login, Toast.LENGTH_SHORT).show();
         idBtnVerificar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -80,7 +79,7 @@ public class Codigo_Veri extends AppCompatActivity {
         try {
             idpersona = Double.valueOf(getIntent().getExtras().getInt("IdPersonaVerificar", 0));
         } catch (Exception e) {
-            Toast.makeText(this, "Ha ocurrido un error al recuperar el idPersona", Toast.LENGTH_SHORT).show();
+            //
         }
         return idpersona;
     }
@@ -129,7 +128,7 @@ public class Codigo_Veri extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<Boolean> call, Throwable t) {
-                Toast.makeText(Codigo_Veri.this, "Error retrofit Codigo", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Codigo_Veri.this, Constantes.ERROR_RETROFIT, Toast.LENGTH_SHORT).show();
                 progressBar.setVisibility(View.GONE);
             }
         });
@@ -198,7 +197,7 @@ public class Codigo_Veri extends AppCompatActivity {
             startActivity(i);
             finish();
         } catch (Exception e) {
-            Toast.makeText(this, "Error al dirigirse a homeActivity", Toast.LENGTH_SHORT).show();
+            //
         }
     }
 }

@@ -1,186 +1,217 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_marginTop="10dp"
-    android:layout_marginStart="10dp"
-    android:layout_marginEnd="10dp"
-    android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="wrap_content">
 
 
-    <androidx.cardview.widget.CardView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="15sp"
-        app:cardElevation="20sp"
-        android:layout_marginTop="20sp"
-        app:cardBackgroundColor="@color/black"
-        tools:ignore="MissingConstraints">
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/m_10dp"
+        android:layout_marginEnd="@dimen/m_10dp"
+        android:layout_marginBottom="@dimen/text_32sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="470sp"
-            android:layout_gravity="center"
-            android:background="@drawable/border_cards_planes">
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_cards_planes"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
 
-            <TextView
-                android:id="@+id/titu2Plan6"
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/idImgInvestor"
+                        android:layout_width="238dp"
+                        android:layout_height="251dp"
+                        android:background="@drawable/aqua"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/idTxtDescripcionInvestor"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="110dp"
+                    android:layout_marginEnd="@dimen/text_32sp"
+                    android:foregroundGravity="bottom"
+                    android:text="FRESHMAN INVESTOR"
+                    android:textAlignment="center"
+                    android:textColor="@color/plan6"
+                    android:textSize="30sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.85"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.286"
+                    tools:ignore="RtlCompat" />
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/idTxtRangoInicial"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/m_5dp"
+                    android:text="U$150000"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.192"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:layout_width="@dimen/m_10dp"
+                    android:layout_height="@dimen/m_5dp"
+                    android:background="@color/white" />
+
+                <TextView
+                    android:id="@+id/idTxtRangoFinal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/m_5dp"
+                    android:text="U$150000"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.192"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/m_10dp"
+                    android:layout_marginEnd="@dimen/m_10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/idImgLogoRendimiento"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@color/plan1" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/m_10dp"
+                        android:layout_weight="1"
+                        android:text="Rendimiento mensual hasta el "
+                        android:textColor="@color/white"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/idTxtRendimiento"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/m_10dp"
+                        android:text="6%"
+                        android:textColor="@color/white"
+                        android:textSize="25sp" />
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_marginStart="5dp"
+                        android:src="@drawable/uparrow" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/m_10dp"
+                    android:layout_marginTop="@dimen/m_10dp"
+                    android:layout_marginEnd="@dimen/m_10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/idImgActivacionMensual"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/chuloblue" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/m_10dp"
+                        android:layout_weight="1"
+                        android:text="Activacion Mensual"
+                        android:textColor="@color/white"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/m_10dp"
+                        android:text="U$"
+                        android:textColor="@color/white"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:id="@+id/idTxtFee"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="12"
+                        android:textColor="@color/white"
+                        android:textSize="25sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/idBtnActivarPlan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="INVESTOR"
-                android:textColor="@color/plan6"
-                android:textSize="30sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.85"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.286" />
-
-            <ImageView
-                android:visibility="gone"
-                android:id="@+id/imageView326"
-                android:layout_width="238dp"
-                android:layout_height="251dp"
-                android:background="@drawable/aqua"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/m_15dp"
+                android:layout_marginBottom="@dimen/m_15dp"
+                android:backgroundTint="@color/plan1"
+                android:gravity="center"
+                android:text="@string/activar" />
+        </LinearLayout>
 
 
-            <TextView
-                android:id="@+id/saldoPlanInicial"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="U$150000"
-                android:textColor="@color/white"
-                android:textSize="30sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.192"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/saldoPlanFinal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="U$150000"
-                android:textColor="@color/white"
-                android:textSize="30sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.834"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/redPlan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="20dp"
-                android:text="Rendimiento mensual hasta el "
-                android:textColor="@color/white"
-                android:textSize="15sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/red2Plan"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.655" />
-
-            <ImageView
-                android:id="@+id/imgRedPlan"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="4dp"
-                android:background="@drawable/planaqua"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/redPlan"
-                app:layout_constraintHorizontal_bias="0.857"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/imageView326"
-                app:layout_constraintVertical_bias="0.651" />
-
-            <TextView
-                android:id="@+id/red2Plan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="32dp"
-                android:text="6%"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.658" />
-
-            <TextView
-                android:id="@+id/tituActPlan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:layout_marginEnd="64dp"
-                android:text="Activación Mensual"
-                android:textColor="@color/white"
-                app:layout_constraintEnd_toStartOf="@+id/tituAct2Plan"
-                app:layout_constraintTop_toBottomOf="@+id/redPlan" />
-
-
-            <ImageView
-                android:id="@+id/chulo6verde"
-                android:layout_width="20dp"
-                android:layout_height="30dp"
-                android:background="@drawable/chuloaqua"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/tituActPlan"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imgRedPlan"
-                app:layout_constraintVertical_bias="0.161" />
-
-            <ImageView
-                android:id="@+id/chuloupa"
-                android:layout_width="25dp"
-                android:layout_height="30dp"
-                android:layout_marginBottom="92dp"
-                android:background="@drawable/uparrow"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/red2Plan"
-                app:layout_constraintTop_toBottomOf="@+id/saldoPlanInicial"
-                app:layout_constraintVertical_bias="0.344" />
-
-            <TextView
-                android:id="@+id/tituAct2Plan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="36dp"
-                android:text="U$ 50"
-                android:textColor="@color/white"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/red2Plan"
-                app:layout_constraintVertical_bias="0.223" />
-
-            <Button
-                android:id="@+id/btnActPlan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="activar"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.502"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tituAct2Plan"
-                app:layout_constraintVertical_bias="0.709" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

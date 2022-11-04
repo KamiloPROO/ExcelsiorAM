@@ -116,12 +116,11 @@ public class Login extends AppCompatActivity {
                             //guardarSharedPreferences2(personaResponseDto.PrimerNombre.toString());
                             guardarSharedPreferencesRol(personaResponseDto.IdRol);
 
-                            Intent i = new Intent(Login.this, MainMenuActivity.class);
+                            Intent i = new Intent(Login.this, Splash.class);
                             i.putExtra("Primera", "Si");
                             startActivity(i);
                             finish();
                         } else {
-                            Toast.makeText(Login.this, " " + personaResponseDto.MensajeRespuesta, Toast.LENGTH_SHORT).show();
                             idProgresBarLogin.setVisibility(View.GONE);
                         }
                     }
@@ -129,7 +128,6 @@ public class Login extends AppCompatActivity {
 
                 @Override
                 public void onFailure(Call<PersonaResponseDto> call, Throwable t) {
-                    //Toast.makeText(Login.this, Constantes.ERROR_RETROFIT, Toast.LENGTH_SHORT).show();
                     idProgresBarLogin.setVisibility(View.GONE);
                 }
             });

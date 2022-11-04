@@ -94,12 +94,9 @@ public class Singup extends AppCompatActivity {
                 progressBar.setVisibility(View.GONE);
 //                Log.e("RESPONSER ", responseDto.Codigo + " mensaje " + responseDto.Mensaje);
                 if (responseDto.Codigo == Constantes.CODIGO_EXITOSO) {
-                    Toast.makeText(Singup.this, ""+personaModelDto.Telefono, Toast.LENGTH_SHORT).show();
                     IrVerificacionCodigo(String.valueOf(responseDto.IdPersona), personaModelDto.Telefono);
-                    Toast.makeText(Singup.this, responseDto.Mensaje, Toast.LENGTH_SHORT).show();
                     progressBar.setVisibility(View.GONE);
                 } else {
-                    Toast.makeText(Singup.this, responseDto.Mensaje, Toast.LENGTH_SHORT).show();
                     progressBar.setVisibility(View.GONE);
                 }
             }
@@ -147,7 +144,7 @@ public class Singup extends AppCompatActivity {
                 esValido = true;
             }
         } catch (Exception e) {
-            Toast.makeText(this, "Error validando campos de texto", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, Constantes.ERROR_VALIDANDO_FORMULARIO, Toast.LENGTH_SHORT).show();
         }
         return esValido;
     }

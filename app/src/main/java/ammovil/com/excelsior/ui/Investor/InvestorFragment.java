@@ -87,7 +87,7 @@ public class InvestorFragment extends Fragment {
 
                 recyclerView.setAdapter(adapterInvestor);
 
-                adapterInvestor.setClickListener(new View.OnClickListener() {
+                /**adapterInvestor.setClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         adapterInvestor.setClickListener(new View.OnClickListener() {
@@ -99,7 +99,7 @@ public class InvestorFragment extends Fragment {
                             }
                         });
                     }
-                });
+                });*/
 
             }
 
