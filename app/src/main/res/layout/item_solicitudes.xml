@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/m_10dp"
+        android:layout_marginEnd="@dimen/m_10dp"
+        android:layout_marginBottom="@dimen/m_15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_cards"
+            android:orientation="vertical"
+            android:padding="@dimen/m_10dp">
+
+            <TextView
+                android:id="@+id/idTxtNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Juan Fernado"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/idTxtDireccionWallet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="YUFTIKFKFTKVKFTJFTJ"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/idTxtMontoSOlicitado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/idTxtFecha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="200"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_22sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

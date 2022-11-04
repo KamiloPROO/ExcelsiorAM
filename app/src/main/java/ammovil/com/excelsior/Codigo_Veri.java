@@ -115,15 +115,18 @@ public class Codigo_Veri extends AppCompatActivity {
             @Override
             public void onResponse(Call<Boolean> call, Response<Boolean> response) {
                 Boolean responseInter = response.body();
-                Log.e("RESPINSECODIGO", responseInter.toString());
-                progressBar.setVisibility(View.GONE);
-                if (responseInter) {
-                    irHomeActivity();
+                if (response.body()!=null){
                     progressBar.setVisibility(View.GONE);
-                } else {
-                    Toast.makeText(Codigo_Veri.this, "Código de verficación no valido", Toast.LENGTH_SHORT).show();
-                    progressBar.setVisibility(View.GONE);
+                    if (responseInter) {
+                        Toast.makeText(Codigo_Veri.this, "Por favor evisa tu correo para conocer tus credenciales de acceso", Toast.LENGTH_SHORT).show();
+                        irHomeActivity();
+                        progressBar.setVisibility(View.GONE);
+                    } else {
+                        Toast.makeText(Codigo_Veri.this, "Código de verficación no valido", Toast.LENGTH_SHORT).show();
+                        progressBar.setVisibility(View.GONE);
+                    }
                 }
+
             }
 
             @Override

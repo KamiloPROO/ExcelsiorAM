@@ -3,34 +3,43 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/action_dash"
-        android:orderInCategory="100"
         android:icon="@drawable/dashboard"
+        android:orderInCategory="100"
         android:title="Dashboard"
         app:showAsAction="never" />
     <item
         android:id="@+id/action_myprofile"
-        android:orderInCategory="100"
         android:icon="@drawable/profile"
+        android:orderInCategory="100"
         android:title="My Profile"
         app:showAsAction="never" />
     <item
         android:id="@+id/action_settings"
-        android:orderInCategory="100"
         android:icon="@drawable/settings"
+        android:orderInCategory="100"
         android:title="@string/action_settings"
+        app:showAsAction="never" />
+
+
+    <item
+        android:id="@+id/action_Administrador"
+        android:icon="@drawable/profile"
+        android:orderInCategory="100"
+        android:title="Ver Inversiones"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/solicitudesAdminFragment"
+        android:icon="@drawable/profile"
+        android:orderInCategory="100"
+        android:title="Ver solicitudes de retiro"
         app:showAsAction="never" />
 
     <item
         android:id="@+id/action_logout"
-        android:orderInCategory="100"
         android:icon="@drawable/logout"
+        android:orderInCategory="100"
         android:title="Logout"
         app:showAsAction="never" />
 
-    <item
-        android:id="@+id/action_Administrador"
-        android:orderInCategory="100"
-        android:icon="@drawable/profile"
-        android:title="Administrador"
-        app:showAsAction="never" />
 </menu>

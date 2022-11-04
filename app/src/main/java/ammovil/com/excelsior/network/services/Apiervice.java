@@ -1,7 +1,5 @@
 package ammovil.com.excelsior.network.services;
 
-import com.airbnb.lottie.L;
-
 import java.util.List;
 
 import ammovil.com.excelsior.data.PersonaModelDto;
@@ -11,11 +9,13 @@ import ammovil.com.excelsior.data.request.ConsultaUsuarioRequestDto;
 import ammovil.com.excelsior.data.request.CrearCuentaTronRequest;
 import ammovil.com.excelsior.data.request.EnviarMensajeTexto;
 import ammovil.com.excelsior.data.request.IniciaSesionRequestDto;
+import ammovil.com.excelsior.data.request.InverionRequestDto;
 import ammovil.com.excelsior.data.request.InversionRequestDto;
 import ammovil.com.excelsior.data.request.ResponseDto;
 import ammovil.com.excelsior.data.response.CodigoGeneradoResponse;
 import ammovil.com.excelsior.data.response.CrearCuentaTronResponseDto;
 import ammovil.com.excelsior.data.response.CuentaTronResponseDto;
+import ammovil.com.excelsior.data.response.InverionBResponseDto;
 import ammovil.com.excelsior.data.response.InversionResponseDto;
 import ammovil.com.excelsior.data.response.MisInversionesResponseDto;
 import ammovil.com.excelsior.data.response.PersonaDto;
@@ -24,7 +24,6 @@ import ammovil.com.excelsior.data.response.ReponseMothersDto;
 import ammovil.com.excelsior.data.response.TiposMembresiaResponseDto;
 import ammovil.com.excelsior.data.response.BalanceSaldosResponseDto;
 import retrofit2.Call;
-import retrofit2.Callback;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
@@ -61,6 +60,9 @@ public interface Apiervice {
     @POST("/api/Inversiones/ListarMisInversiones")
     Call<List<MisInversionesResponseDto>> ListarMisInversiones(@Body ConsultaCuentasTronDto consulta);
 
+    @POST("/api/Inversiones/GuardarSolicitudPago")
+    Call<InverionBResponseDto> GuardarSolicitudPago(@Body InverionRequestDto requestDto);
+
     /**
      * PETICIONES GET
      * */
@@ -75,5 +77,8 @@ public interface Apiervice {
 
     @GET("/api/CuentaTron/EnviarBalanceAMadre")
     Call<ReponseMothersDto> EnviarBalanceAMadre();
+
+    @GET("/api/Inversiones/ListarSolicitudes")
+    Call<List<InverionBResponseDto>> ListarSolicitudes();
 
 }

@@ -88,10 +88,9 @@ public class Login extends AppCompatActivity {
     }
 
 
-
     /**
      * Hacemos el llamado al api servide de iniciar sesión
-     * */
+     */
     private void llamarRetrofit(String login, String password) {
         iniciaSesionRequestDto = new IniciaSesionRequestDto();
         idProgresBarLogin.setVisibility(View.VISIBLE);
@@ -112,7 +111,7 @@ public class Login extends AppCompatActivity {
                         public void onResponse(Call<PersonaResponseDto> call, Response<PersonaResponseDto> response) {
                             personaResponseDto = response.body();
                             if (call.isExecuted()) {
-                                if (personaResponseDto.CodigoRespuesta.equals(Integer.toString(Constantes.CODIGO_EXITOSO))) {
+                                if (response.body() != null && personaResponseDto.CodigoRespuesta.equals(Integer.toString(Constantes.CODIGO_EXITOSO))) {
                                     response.body().toString();
                                     Toast.makeText(Login.this, "BIENVENIDO", Toast.LENGTH_SHORT).show();
                                     idProgresBarLogin.setVisibility(View.GONE);
@@ -143,7 +142,6 @@ public class Login extends AppCompatActivity {
             }
         }).start();
     }
-
 
 
     /**

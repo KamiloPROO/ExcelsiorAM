@@ -55,12 +55,10 @@ public class Splash extends AppCompatActivity {
         SharedPreferences prefs = getSharedPreferences("MY_PREFS_EXCELSIOR", MODE_PRIVATE);
         SharedPreferences prefs2 = getSharedPreferences("MY_PREFS_EXCELSIOR2", MODE_PRIVATE);
         String id = prefs.getString("idPersona", "vacio");
-        String nombre = prefs2.getString("Nombre", "vacio");
 
         if (id == null || id.equals("vacio")) {
             Constantes.ID_PERSONA = "0.0";
         } else {
-            Constantes.NOMBRE = nombre;
             Constantes.ID_PERSONA = id;
         }
 

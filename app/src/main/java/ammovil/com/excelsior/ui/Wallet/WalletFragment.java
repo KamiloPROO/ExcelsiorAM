@@ -76,8 +76,8 @@ public class WalletFragment extends Fragment {
         idPersona = Double.valueOf(recuperarSharedPreferences());
         try {
             listarCuentasTron(idPersona);
-        }catch (Exception e){
-            Toast.makeText(requireContext(), "Errrr"+e.getMessage(), Toast.LENGTH_SHORT).show();
+        } catch (Exception e) {
+            Toast.makeText(requireContext(), "Errrr" + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
 
         binding.idBtnCrearCuentaTron.setOnClickListener(new View.OnClickListener() {
@@ -116,8 +116,9 @@ public class WalletFragment extends Fragment {
                     final CuentaTronResponseDto listaCuentas = response.body();
                     if (call.isExecuted()) {
                         progressBar.setVisibility(View.GONE);
-                        Toast.makeText(requireContext(), cuentaTronResponseDto.Referencia, Toast.LENGTH_SHORT).show();
-                        if (response.body().IdUsuario != null) {
+                        //Toast.makeText(requireContext(), cuentaTronResponseDto.Referencia, Toast.LENGTH_SHORT).show();
+
+                        if (response.body() != null && response.body().IdUsuario != null) {
                             ponerDatosCuentaTron(listaCuentas);
                             binding.idBtnCrearCuentaTron.setVisibility(View.GONE);
                             cardView.setVisibility(View.VISIBLE);
@@ -126,15 +127,17 @@ public class WalletFragment extends Fragment {
                             consultarPersonaPorId(idPersona);
 
                         } else {
-                            response.body().toString();
-                            progressBar.setVisibility(View.GONE);
-                            binding.idBtnCrearCuentaTron.setVisibility(View.VISIBLE);
+                            if (response.body() != null) {
+                                response.body().toString();
+                                progressBar.setVisibility(View.GONE);
+                                binding.idBtnCrearCuentaTron.setVisibility(View.VISIBLE);
+                            }
                         }
                     }
                 }
+
                 @Override
                 public void onFailure(Call<CuentaTronResponseDto> call, Throwable t) {
-                    Log.e("Errrr", t.toString());
                     Toast.makeText(requireContext(), Constantes.ERROR_RETROFIT, Toast.LENGTH_SHORT).show();
                     progressBar.setVisibility(View.GONE);
                 }
@@ -155,11 +158,14 @@ public class WalletFragment extends Fragment {
             @Override
             public void onResponse(Call<PersonaDto> call, Response<PersonaDto> response) {
                 personaDto = response.body();
-                if (call.isExecuted()){
-                    binding.idTxtNombrePropietario.setText(personaDto.PRIMER_NOMBRE);
-                    response.body().toString();
+                if (call.isExecuted()) {
+                    if (response.body() != null) {
+                        binding.idTxtNombrePropietario.setText(personaDto.PRIMER_NOMBRE);
+                        response.body().toString();
+                    }
                 }
             }
+
             @Override
             public void onFailure(Call<PersonaDto> call, Throwable t) {
 
@@ -178,7 +184,9 @@ public class WalletFragment extends Fragment {
             @Override
             public void onResponse(Call<CrearCuentaTronResponseDto> call, Response<CrearCuentaTronResponseDto> response) {
                 binding.idBtnCrearCuentaTron.setVisibility(View.GONE);
-                listarCuentasTron(idPersona);
+                if (response.body()!=null){
+                    listarCuentasTron(idPersona);
+                }
                 progressBar.setVisibility(View.GONE);
             }
 
@@ -212,6 +220,7 @@ public class WalletFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
+
     private String recuperarSharedPreferences() {
         SharedPreferences prefs = requireContext().getSharedPreferences("MY_PREFS_EXCELSIOR", MODE_PRIVATE);
         String id = prefs.getString("idPersona", "vacio");

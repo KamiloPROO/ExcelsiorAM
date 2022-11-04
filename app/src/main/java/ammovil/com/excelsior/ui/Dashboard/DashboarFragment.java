@@ -136,7 +136,7 @@ public class DashboarFragment extends Fragment {
                         public void onResponse(Call<List<MisInversionesResponseDto>> call, Response<List<MisInversionesResponseDto>> response) {
                             if (call.isExecuted()) {
 
-                                if (response.body().size() > 0) {
+                                if (response.body() != null && response.body().size() > 0) {
                                     listaInversiones = response.body();
                                     Log.e("lisyaaa", "datos" + listaInversiones.get(0).IdPersona.toString());
 

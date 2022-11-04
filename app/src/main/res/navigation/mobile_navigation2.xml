@@ -52,4 +52,15 @@
         android:name="ammovil.com.excelsior.ui.Support.SupportFragment"
         android:label="support"
         tools:layout="@layout/fragment_support" />
+
+    <fragment
+        android:id="@+id/nav_solicitudesRetir"
+        android:name="ammovil.com.excelsior.ui.solicitudesRetiro.SolicitudesRetiroFragment"
+        android:label=""
+        tools:layout="@layout/fragment_solicitudes_retiro" />
+    <fragment
+        android:id="@+id/solicitudesAdminFragment"
+        android:name="ammovil.com.excelsior.ui.admin.SolicitudesAdminFragment"
+        android:label=""
+        tools:layout="@layout/fragment_solicitudes_admin" />
 </navigation>

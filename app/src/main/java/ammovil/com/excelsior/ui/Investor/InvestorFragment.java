@@ -75,30 +75,29 @@ public class InvestorFragment extends Fragment {
                 final List<TiposMembresiaResponseDto> listaMembresias = response.body();
                 //list = response.body();
                 progressBar.setVisibility(View.GONE);
+                if (response.body() != null) {
+                    recyclerView = view.findViewById(R.id.rcInvestor);
+                    recyclerView.setHasFixedSize(true);
+                    lManager = new LinearLayoutManager(requireContext());
 
+                    recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
+                    recyclerView.setLayoutManager(lManager);
+                    adapterInvestor = new AdapterInvestor(listaMembresias, requireContext());
 
-                recyclerView = view.findViewById(R.id.rcInvestor);
-                recyclerView.setHasFixedSize(true);
-                lManager = new LinearLayoutManager(requireContext());
+                    recyclerView.setAdapter(adapterInvestor);
+                }
 
-                recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
-                recyclerView.setLayoutManager(lManager);
-                adapterInvestor = new AdapterInvestor(listaMembresias, requireContext());
-
-                recyclerView.setAdapter(adapterInvestor);
 
                 /**adapterInvestor.setClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        adapterInvestor.setClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                Intent i = new Intent(requireContext(), ActivarPlan1.class);
-                                i.putExtra("idPlan", listaMembresias.get(recyclerView.getChildAdapterPosition(v)).getId().toString());
-                                startActivity(i);
-                            }
-                        });
-                    }
+                @Override public void onClick(View v) {
+                adapterInvestor.setClickListener(new View.OnClickListener() {
+                @Override public void onClick(View v) {
+                Intent i = new Intent(requireContext(), ActivarPlan1.class);
+                i.putExtra("idPlan", listaMembresias.get(recyclerView.getChildAdapterPosition(v)).getId().toString());
+                startActivity(i);
+                }
+                });
+                }
                 });*/
 
             }

@@ -21,6 +21,11 @@
             android:id="@+id/nav_wallet"
             android:icon="@drawable/wallet"
             android:title="Wallet" />
+
+        <item
+            android:id="@+id/nav_solicitudesRetir"
+            android:icon="@drawable/wallet"
+            android:title="Solicitudes de retiro" />
         <item
             android:id="@+id/nav_investor"
             android:icon="@drawable/investorsplan"

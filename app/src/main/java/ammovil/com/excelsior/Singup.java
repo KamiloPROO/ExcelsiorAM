@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -92,12 +93,14 @@ public class Singup extends AppCompatActivity {
             public void onResponse(Call<ResponseDto> call, Response<ResponseDto> response) {
                 responseDto = response.body();
                 progressBar.setVisibility(View.GONE);
-//                Log.e("RESPONSER ", responseDto.Codigo + " mensaje " + responseDto.Mensaje);
-                if (responseDto.Codigo == Constantes.CODIGO_EXITOSO) {
-                    IrVerificacionCodigo(String.valueOf(responseDto.IdPersona), personaModelDto.Telefono);
-                    progressBar.setVisibility(View.GONE);
-                } else {
-                    progressBar.setVisibility(View.GONE);
+                if (response.body() != null) {
+                    //Log.e("RESPONSER ", responseDto.Codigo + " mensaje " + responseDto.Mensaje);
+                    if (responseDto.Codigo == Constantes.CODIGO_EXITOSO) {
+                        IrVerificacionCodigo(String.valueOf(responseDto.IdPersona), personaModelDto.Telefono);
+                        progressBar.setVisibility(View.GONE);
+                    } else {
+                        progressBar.setVisibility(View.GONE);
+                    }
                 }
             }
 

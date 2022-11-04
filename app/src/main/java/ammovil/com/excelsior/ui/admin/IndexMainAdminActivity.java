@@ -51,21 +51,22 @@ public class IndexMainAdminActivity extends AppCompatActivity {
             Apiervice apiervice = RetrofitHelper.retrofilBuild(Constantes.BASE_URL_EXCELSIOR).create(Apiervice.class);
             Call<BalanceSaldosResponseDto> call = apiervice.ObtenerBalanceMadre();
             call.enqueue(new Callback<BalanceSaldosResponseDto>() {
-                        @Override
-                        public void onResponse(Call<BalanceSaldosResponseDto> call, Response<BalanceSaldosResponseDto> response) {
-                            balanceSaldosResponseDto = response.body();
+                @Override
+                public void onResponse(Call<BalanceSaldosResponseDto> call, Response<BalanceSaldosResponseDto> response) {
+                    balanceSaldosResponseDto = response.body();
+                    progresBar.setVisibility(View.GONE);
+                    if (call.isExecuted()) {
+                        if (response.body() != null) {
                             ponerDatosEnVista(balanceSaldosResponseDto);
-                            if (call.isExecuted()){
-                                progresBar.setVisibility(View.GONE);
-                                response.body().toString();
-                            }
                         }
+                    }
+                }
 
-                        @Override
-                        public void onFailure(Call<BalanceSaldosResponseDto> call, Throwable t) {
+                @Override
+                public void onFailure(Call<BalanceSaldosResponseDto> call, Throwable t) {
 
-                        }
-                    });
+                }
+            });
         } catch (Exception e) {
             progresBar.setVisibility(View.GONE);
         }
@@ -81,12 +82,12 @@ public class IndexMainAdminActivity extends AppCompatActivity {
                 @Override
                 public void onResponse(Call<ReponseMothersDto> call, Response<ReponseMothersDto> response) {
                     respoReponseMothersDto = response.body();
-                    if (call.isExecuted()){
-                        progresBar.setVisibility(View.GONE);
+                    progresBar.setVisibility(View.GONE);
+                    if (call.isExecuted()) {
                         response.body().toString();
-                        if (!response.body().success){
+                        if (!response.body().success) {
                             Toast.makeText(IndexMainAdminActivity.this, "No fue posile recuperar los saldos", Toast.LENGTH_SHORT).show();
-                        }else{
+                        } else {
                             ObtenerBalanceMadre();
                         }
                     }

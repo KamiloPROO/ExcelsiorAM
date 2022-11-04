@@ -188,10 +188,10 @@
         app:layout_constraintVertical_bias="0.698" />
 
     <Button
+        android:backgroundTint="@color/menu"
         android:id="@+id/idBtnRegistarme"
         android:layout_width="300sp"
         android:layout_height="50sp"
-        android:background="@color/typography"
         android:text="Register"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"

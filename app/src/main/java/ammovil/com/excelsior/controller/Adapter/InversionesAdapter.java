@@ -72,7 +72,7 @@ public class InversionesAdapter extends RecyclerView.Adapter<InversionesAdapter.
 
     @SuppressLint("SetTextI18n")
     @Override
-    public void onBindViewHolder(@NonNull InversionesAdapter.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
+    public void onBindViewHolder(@NonNull InversionesAdapter.ViewHolder holder, int position) {
         MisInversionesResponseDto datos = listDatosInvestor.get(position);
 
         holder.idTxtNobrePlan.setText(datos.Descripcion);

@@ -25,6 +25,7 @@ import ammovil.com.excelsior.databinding.ActivityMainMenuBinding;
 import ammovil.com.excelsior.ui.Investor.InvestorFragment;
 import ammovil.com.excelsior.ui.Wallet.WalletFragment;
 import ammovil.com.excelsior.ui.admin.IndexMainAdminActivity;
+import ammovil.com.excelsior.ui.admin.SolicitudesAdminFragment;
 
 public class MainMenuActivity extends AppCompatActivity {
 
@@ -68,7 +69,15 @@ public class MainMenuActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_dashboard, R.id.nav_finances, R.id.nav_team, R.id.nav_wallet, R.id.nav_investor, R.id.nav_education, R.id.nav_resources, R.id.nav_support)
+                R.id.nav_dashboard,
+                R.id.nav_finances,
+                R.id.nav_team,
+                R.id.nav_wallet,
+                R.id.nav_solicitudesRetir,
+                R.id.nav_investor,
+                R.id.nav_education,
+                R.id.nav_resources,
+                R.id.nav_support)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main_menu);
@@ -101,6 +110,10 @@ public class MainMenuActivity extends AppCompatActivity {
             Intent i = new Intent(this, IndexMainAdminActivity.class);
             startActivity(i);
 
+        }
+        if (id == R.id.solicitudesAdminFragment) {
+            Intent i = new Intent(this, SolicitudesAdminFragment.class);
+            startActivity(i);
         }
         return super.onOptionsItemSelected(item);
     }

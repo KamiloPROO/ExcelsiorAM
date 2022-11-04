@@ -51,5 +51,8 @@
     <string name="master_investor">Master Investor</string>
     <string name="rafereal_link">Rafereal Link:</string>
     <string name="copy">Copy</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="wallet_usdt">WALLET USDT</string>
 
 </resources>

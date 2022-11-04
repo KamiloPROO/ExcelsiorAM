@@ -82,7 +82,6 @@ public class ActivarPlan1 extends AppCompatActivity {
         int value = newData.intValue();
 
         idPlanCompra = value + 1;
-        Toast.makeText(this, "" + idPlan, Toast.LENGTH_SHORT).show();
 
         cantidadInvertir = binding.idTxtMontoAOperar.getText().toString();
         llamarRetrofit(idPlan + 1);

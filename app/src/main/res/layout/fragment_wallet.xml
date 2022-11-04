@@ -89,7 +89,7 @@
                         android:layout_weight="1"
                         android:gravity="center_vertical"
                         android:maxLines="1"
-                        android:text="ANDRES PERALTA"
+                        android:text="..."
                         android:textColor="@android:color/black"
                         android:textSize="@dimen/text_22sp"
                         android:textStyle="bold" />
@@ -328,7 +328,6 @@
 
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:visibility="gone"
         android:id="@+id/idBtnCrearCuentaTron"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
