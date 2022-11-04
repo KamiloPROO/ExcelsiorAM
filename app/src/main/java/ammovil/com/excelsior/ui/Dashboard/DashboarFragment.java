@@ -54,10 +54,17 @@ public class DashboarFragment extends Fragment {
     private Double idPersona = 0.0;
 
     SliderView sliderView;
-    int[] images = {R.drawable.excelsior,
+    int[] images = {
+            R.drawable.imagen_carrusel_1,
+            R.drawable.carrusel_img_2,
+            R.drawable.carrusel_img_3,
+            R.drawable.excelsior,
             R.drawable.four,
             R.drawable.five,
-            R.drawable.six};
+            R.drawable.six,
+
+
+    };
 
 
     private FragmentDashboardBinding binding;
@@ -114,47 +121,56 @@ public class DashboarFragment extends Fragment {
     }
 
     private void ListarMisInversiones(Double idPersonGet, View view) {
-        try {
-            consultaInversiones = new ConsultaCuentasTronDto();
-            consultaInversiones.IdPersona = idPersonGet;
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    consultaInversiones = new ConsultaCuentasTronDto();
+                    consultaInversiones.IdPersona = idPersonGet;
 
-            Apiervice apiervice = RetrofitHelper.retrofilBuild(Constantes.BASE_URL_EXCELSIOR).create(Apiervice.class);
+                    Apiervice apiervice = RetrofitHelper.retrofilBuild(Constantes.BASE_URL_EXCELSIOR).create(Apiervice.class);
 
-            Call<List<MisInversionesResponseDto>> call = apiervice.ListarMisInversiones(consultaInversiones);
-            call.enqueue(new Callback<List<MisInversionesResponseDto>>() {
-                @Override
-                public void onResponse(Call<List<MisInversionesResponseDto>> call, Response<List<MisInversionesResponseDto>> response) {
-                    if (call.isExecuted()) {
-                        if (response.body().size() > 0){
-                            listaInversiones = response.body();
-                            Log.e("lisyaaa", "datos" + listaInversiones.get(0).IdPersona.toString());
+                    Call<List<MisInversionesResponseDto>> call = apiervice.ListarMisInversiones(consultaInversiones);
+                    call.enqueue(new Callback<List<MisInversionesResponseDto>>() {
+                        @Override
+                        public void onResponse(Call<List<MisInversionesResponseDto>> call, Response<List<MisInversionesResponseDto>> response) {
+                            if (call.isExecuted()) {
 
-                            recyclerView = view.findViewById(R.id.idRecyclerViewMisInversiones);
-                            recyclerView.setHasFixedSize(true);
-                            lManager = new LinearLayoutManager(requireContext());
+                                if (response.body().size() > 0) {
+                                    listaInversiones = response.body();
+                                    Log.e("lisyaaa", "datos" + listaInversiones.get(0).IdPersona.toString());
 
-                            recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
-                            recyclerView.setLayoutManager(lManager);
-                            inversionesAdapter = new InversionesAdapter(listaInversiones, requireContext());
+                                    recyclerView = view.findViewById(R.id.idRecyclerViewMisInversiones);
+                                    recyclerView.setHasFixedSize(true);
 
-                            recyclerView.setAdapter(inversionesAdapter);
+                                    lManager = new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false);
+                                    //lManager = new LinearLayoutManager(requireContext());
 
-                        }else{
-                            //
+                                    recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
+                                    recyclerView.setLayoutManager(lManager);
+                                    inversionesAdapter = new InversionesAdapter(listaInversiones, requireContext());
+
+                                    recyclerView.setAdapter(inversionesAdapter);
+
+                                } else {
+                                    //
+                                }
+                            }
                         }
-                    }
+
+                        @Override
+                        public void onFailure(Call<List<MisInversionesResponseDto>> call, Throwable t) {
+
+                        }
+                    });
+
+
+                } catch (Exception e) {
+
                 }
+            }
+        }).start();
 
-                @Override
-                public void onFailure(Call<List<MisInversionesResponseDto>> call, Throwable t) {
-
-                }
-            });
-
-
-        } catch (Exception e) {
-
-        }
     }
 
     private String recuperarSharedPreferences() {

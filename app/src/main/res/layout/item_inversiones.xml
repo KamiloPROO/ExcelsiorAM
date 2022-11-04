@@ -7,18 +7,20 @@
     tools:ignore="MissingDefaultResource">
 
     <androidx.cardview.widget.CardView
+        android:layout_marginTop="@dimen/m_15dp"
+        android:backgroundTint="@color/transparend"
+        android:background="@color/transparend"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/m_10dp"
         android:layout_marginEnd="@dimen/m_10dp"
-        android:background="@color/plan1"
-        android:backgroundTint="@color/plan1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
+            android:background="@drawable/border_cards"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"

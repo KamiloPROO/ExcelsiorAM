@@ -113,11 +113,11 @@ public class WalletFragment extends Fragment {
                 @Override
                 public void onResponse(Call<CuentaTronResponseDto> call, Response<CuentaTronResponseDto> response) {
                     cuentaTronResponseDto = response.body();
-                    //final CuentaTronResponseDto listaCuentas = response.body();
+                    final CuentaTronResponseDto listaCuentas = response.body();
                     if (call.isExecuted()) {
                         progressBar.setVisibility(View.GONE);
                         Toast.makeText(requireContext(), cuentaTronResponseDto.Referencia, Toast.LENGTH_SHORT).show();
-                       /* if (response.body().IdUsuario != null) {
+                        if (response.body().IdUsuario != null) {
                             ponerDatosCuentaTron(listaCuentas);
                             binding.idBtnCrearCuentaTron.setVisibility(View.GONE);
                             cardView.setVisibility(View.VISIBLE);
@@ -129,7 +129,7 @@ public class WalletFragment extends Fragment {
                             response.body().toString();
                             progressBar.setVisibility(View.GONE);
                             binding.idBtnCrearCuentaTron.setVisibility(View.VISIBLE);
-                        }*/
+                        }
                     }
                 }
                 @Override

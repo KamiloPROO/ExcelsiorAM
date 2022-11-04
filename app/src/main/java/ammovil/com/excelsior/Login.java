@@ -19,6 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import ammovil.com.excelsior.data.request.IniciaSesionRequestDto;
 import ammovil.com.excelsior.data.response.PersonaResponseDto;
 import ammovil.com.excelsior.databinding.ActivityMainBinding;
+import ammovil.com.excelsior.network.MyApiAdapter;
 import ammovil.com.excelsior.network.RetrofitHelper;
 import ammovil.com.excelsior.network.services.Apiervice;
 import ammovil.com.excelsior.utils.Constantes;
@@ -86,56 +87,64 @@ public class Login extends AppCompatActivity {
         });
     }
 
+
+
     /**
      * Hacemos el llamado al api servide de iniciar sesión
-     */
+     * */
     private void llamarRetrofit(String login, String password) {
+        iniciaSesionRequestDto = new IniciaSesionRequestDto();
         idProgresBarLogin.setVisibility(View.VISIBLE);
-        try {
-            iniciaSesionRequestDto = new IniciaSesionRequestDto();
-            iniciaSesionRequestDto.IdProyecto = Constantes.ID_PROYECTO;
-            iniciaSesionRequestDto.IdPersona = 0.0;
-            iniciaSesionRequestDto.Login = login;
-            iniciaSesionRequestDto.Password = password;
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    iniciaSesionRequestDto.IdProyecto = Constantes.ID_PROYECTO;
+                    iniciaSesionRequestDto.IdPersona = 0.0;
+                    iniciaSesionRequestDto.Login = login;
+                    iniciaSesionRequestDto.Password = password;
 
-            Apiervice apiervice = RetrofitHelper.retrofilBuild(Constantes.BASE_URL_PERSONAS).create(Apiervice.class);
+                    Apiervice apiervice = RetrofitHelper.retrofilBuild(Constantes.BASE_URL_PERSONAS).create(Apiervice.class);
 
-            Call<PersonaResponseDto> call = apiervice.IniciarSesion(iniciaSesionRequestDto);
-            call.enqueue(new Callback<PersonaResponseDto>() {
-                @Override
-                public void onResponse(Call<PersonaResponseDto> call, Response<PersonaResponseDto> response) {
-                    personaResponseDto = response.body();
-                    String codigoResponse = personaResponseDto.CodigoRespuesta;
-                    if (call.isExecuted()) {
-                        if (personaResponseDto.CodigoRespuesta.equals(Integer.toString(Constantes.CODIGO_EXITOSO))) {
-                            response.body().toString();
-                            Toast.makeText(Login.this, "BIENVENIDO", Toast.LENGTH_SHORT).show();
-                            idProgresBarLogin.setVisibility(View.GONE);
+                    Call<PersonaResponseDto> call = apiervice.IniciarSesion(iniciaSesionRequestDto);
+                    call.enqueue(new Callback<PersonaResponseDto>() {
+                        @Override
+                        public void onResponse(Call<PersonaResponseDto> call, Response<PersonaResponseDto> response) {
+                            personaResponseDto = response.body();
+                            if (call.isExecuted()) {
+                                if (personaResponseDto.CodigoRespuesta.equals(Integer.toString(Constantes.CODIGO_EXITOSO))) {
+                                    response.body().toString();
+                                    Toast.makeText(Login.this, "BIENVENIDO", Toast.LENGTH_SHORT).show();
+                                    idProgresBarLogin.setVisibility(View.GONE);
 
-                            guardarSharedPreferences(personaResponseDto.Id.toString());
-                            //guardarSharedPreferences2(personaResponseDto.PrimerNombre.toString());
-                            guardarSharedPreferencesRol(personaResponseDto.IdRol);
+                                    guardarSharedPreferences(personaResponseDto.Id.toString());
+                                    //guardarSharedPreferences2(personaResponseDto.PrimerNombre.toString());
+                                    guardarSharedPreferencesRol(personaResponseDto.IdRol);
 
-                            Intent i = new Intent(Login.this, Splash.class);
-                            i.putExtra("Primera", "Si");
-                            startActivity(i);
-                            finish();
-                        } else {
+                                    Intent i = new Intent(Login.this, Splash.class);
+                                    i.putExtra("Primera", "Si");
+                                    startActivity(i);
+                                    finish();
+                                } else {
+                                    idProgresBarLogin.setVisibility(View.GONE);
+                                }
+                            }
+                        }
+
+                        @Override
+                        public void onFailure(Call<PersonaResponseDto> call, Throwable t) {
                             idProgresBarLogin.setVisibility(View.GONE);
                         }
-                    }
-                }
-
-                @Override
-                public void onFailure(Call<PersonaResponseDto> call, Throwable t) {
+                    });
+                } catch (Exception e) {
+                    Toast.makeText(Login.this, Constantes.ERROR_RETROFIT, Toast.LENGTH_SHORT).show();
                     idProgresBarLogin.setVisibility(View.GONE);
                 }
-            });
-        } catch (Exception e) {
-            Toast.makeText(Login.this, Constantes.ERROR_RETROFIT, Toast.LENGTH_SHORT).show();
-            idProgresBarLogin.setVisibility(View.GONE);
-        }
+            }
+        }).start();
     }
+
+
 
     /**
      * Referencia datos formulario
